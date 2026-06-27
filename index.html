@@ -216,11 +216,17 @@ ul{list-style:none}
 }
 .pc:hover{transform:translateY(-4px);box-shadow:var(--sh3)}
 .pc-top{position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--r) var(--r) 0 0}
-.pc-icon{font-size:1.4rem;margin-bottom:12px;display:block}
-.pc-name{
-  font-size:1.3rem;font-weight:800;color:var(--navy);
-  letter-spacing:.02em;text-transform:uppercase;
-  margin-bottom:5px;line-height:1;
+.pc-logo{
+  height:34px;margin-bottom:16px;
+  display:flex;align-items:center;
+}
+.pc-logo img{max-height:32px;max-width:100%;width:auto;object-fit:contain;display:block}
+.pc-logo .pc-wordmark{
+  font-weight:800;font-size:1.45rem;letter-spacing:-.02em;line-height:1;
+}
+.pc-logo .pc-wordmark small{
+  display:block;font-size:.5rem;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--t3);margin-top:3px;
 }
 .pc-cert{
   font-family:'Montserrat',sans-serif;
@@ -340,6 +346,26 @@ button.pc:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .pc-bitrix .pc-top{background:var(--c)}
 .pc-bitrix .pc-cert{color:var(--c)}
 .pc-bitrix:hover{border-color:rgba(0,153,181,.3);box-shadow:0 16px 40px rgba(0,153,181,.12),var(--sh2)}
+
+.pc-cato{--c:#158864}
+.pc-cato .pc-top{background:var(--c)}
+.pc-cato .pc-cert{color:var(--c)}
+.pc-cato:hover{border-color:rgba(21,136,100,.3);box-shadow:0 16px 40px rgba(21,136,100,.12),var(--sh2)}
+
+/* Wide partner card (spans full row) */
+.pc--wide{
+  grid-column:1/-1;
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+  padding-top:22px;padding-bottom:22px;
+}
+.pc--wide .pc-logo{margin-bottom:0;flex-shrink:0}
+.pc--wide .pc-wide-mid{display:flex;flex-direction:column;gap:4px}
+.pc--wide .pc-badge{margin-top:6px}
+.pc--wide .pc-arrow{margin:0 0 0 auto}
+@media(max-width:560px){
+  .pc--wide{gap:14px}
+  .pc--wide .pc-arrow{margin:8px 0 0 0}
+}
 
 /* ── TICKER ─────────────────────────────── */
 .ticker{
@@ -901,34 +927,39 @@ button.pc:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
       <div class="hero-partners" aria-label="Partners certificados">
         <button class="pc pc-fortinet" data-partner="fortinet" aria-label="Ver soluciones Fortinet con Argensys">
           <div class="pc-top"></div>
-          <span class="pc-icon">🔥</span>
-          <div class="pc-name">Fortinet</div>
+          <div class="pc-logo"><img src="logos/fortinet.svg" alt="Fortinet"></div>
           <div class="pc-cert">Advanced Partner</div>
           <div class="pc-badge">Partner certificado</div>
           <div class="pc-arrow">Cómo te ayudamos →</div>
         </button>
         <button class="pc pc-ibm" data-partner="ibm" aria-label="Ver soluciones IBM con Argensys">
           <div class="pc-top"></div>
-          <span class="pc-icon">💡</span>
-          <div class="pc-name">IBM</div>
+          <div class="pc-logo"><img src="logos/ibm.svg" alt="IBM"></div>
           <div class="pc-cert">Business Partner</div>
           <div class="pc-badge">Partner certificado</div>
           <div class="pc-arrow">Cómo te ayudamos →</div>
         </button>
         <button class="pc pc-lenovo" data-partner="lenovo" aria-label="Ver soluciones Lenovo con Argensys">
           <div class="pc-top"></div>
-          <span class="pc-icon">🖥️</span>
-          <div class="pc-name">Lenovo</div>
+          <div class="pc-logo"><img src="logos/lenovo.svg" alt="Lenovo"></div>
           <div class="pc-cert">Authorized Partner</div>
           <div class="pc-badge">Partner certificado</div>
           <div class="pc-arrow">Cómo te ayudamos →</div>
         </button>
         <button class="pc pc-bitrix" data-partner="bitrix" aria-label="Ver soluciones Bitrix24 con Argensys">
           <div class="pc-top"></div>
-          <span class="pc-icon">⚡</span>
-          <div class="pc-name">Bitrix24</div>
+          <div class="pc-logo"><span class="pc-wordmark" style="color:#2C9FD4">Bitrix24</span></div>
           <div class="pc-cert">Silver Partner</div>
           <div class="pc-badge">Partner certificado</div>
+          <div class="pc-arrow">Cómo te ayudamos →</div>
+        </button>
+        <button class="pc pc-cato pc--wide" data-partner="cato" aria-label="Ver soluciones Cato Networks con Argensys">
+          <div class="pc-top"></div>
+          <div class="pc-logo"><span class="pc-wordmark" style="color:#158864">Cato<small>Networks</small></span></div>
+          <div class="pc-wide-mid">
+            <div class="pc-cert">SASE Partner</div>
+            <div class="pc-badge">Partner certificado</div>
+          </div>
           <div class="pc-arrow">Cómo te ayudamos →</div>
         </button>
       </div>
@@ -1248,7 +1279,7 @@ button.pc:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
     </div>
     <div class="foot-bot">
       <p class="foot-copy">© 2025 Argensys IT Services S.R.L. Todos los derechos reservados.</p>
-      <div class="foot-certs"><span class="cert">Fortinet ADV</span><span class="cert">IBM Partner</span><span class="cert">Lenovo Auth.</span><span class="cert">Bitrix24 Silver</span></div>
+      <div class="foot-certs"><span class="cert">Fortinet ADV</span><span class="cert">IBM Partner</span><span class="cert">Lenovo Auth.</span><span class="cert">Bitrix24 Silver</span><span class="cert">Cato SASE</span></div>
     </div>
   </div>
 </footer>
@@ -1379,32 +1410,39 @@ document.querySelectorAll('.check-item').forEach(item=>{
 /* PARTNER MODAL */
 const partners={
   fortinet:{
-    color:'#E8442A',icon:'🔥',name:'Fortinet',cert:'Advanced Partner',
+    color:'#E8442A',logo:'logos/fortinet.svg',name:'Fortinet',cert:'Advanced Partner',
     what:'Fortinet es el líder mundial en ciberseguridad de redes. Sus soluciones Next-Generation Firewall protegen millones de empresas en más de 100 países con inspección de tráfico en tiempo real y detección de amenazas basada en inteligencia artificial.',
     how:'Como Advanced Partner certificado, implementamos y gestionamos el ecosistema Fortinet completo en tu infraestructura: desde el firewall perimetral hasta la protección de endpoints y el análisis centralizado de eventos. Cada instalación es configurada por ingenieros certificados y monitoreada de forma continua.',
     cases:['Protección del perímetro de red contra ataques externos e internos','Control y cifrado de VPN para equipos que trabajan de forma remota','Inspección de tráfico cifrado HTTPS/SSL sin impacto en el rendimiento','Segmentación de red para aislar áreas críticas del negocio','Filtrado web y control de aplicaciones por usuario o grupo'],
     products:['FortiGate NGFW','FortiClient VPN','FortiEDR','FortiAnalyzer','FortiSandbox']
   },
   ibm:{
-    color:'#1755C4',icon:'💡',name:'IBM',cert:'Business Partner',
+    color:'#1755C4',logo:'logos/ibm.svg',name:'IBM',cert:'Business Partner',
     what:'IBM es una empresa global con más de 100 años de historia que hoy lidera en inteligencia artificial aplicada a la seguridad, infraestructura empresarial de alto rendimiento y servicios de nube híbrida. Su plataforma QRadar es el estándar de industria para centros de operaciones de seguridad (SOC).',
     how:'Como IBM Business Partner, integramos las soluciones IBM en tu entorno para centralizar y correlacionar eventos de seguridad de toda tu organización. Detectamos amenazas que los sistemas tradicionales no ven, reduciendo el tiempo de respuesta ante incidentes de días a minutos.',
     cases:['Centralización y correlación de logs de seguridad en tiempo real','Detección de comportamientos anómalos e insider threats','Cumplimiento normativo y auditoría automatizada','Análisis forense post-incidente con trazabilidad completa','Infraestructura de servidores de alta disponibilidad para entornos críticos'],
     products:['IBM QRadar SIEM','IBM FlashSystem','IBM Cloud Pak','IBM Security Verify','IBM Cognos']
   },
   lenovo:{
-    color:'#E65C00',icon:'🖥️',name:'Lenovo',cert:'Authorized Partner',
+    color:'#E65C00',logo:'logos/lenovo.svg',name:'Lenovo',cert:'Authorized Partner',
     what:'Lenovo es el fabricante de hardware empresarial más grande del mundo, con líneas ThinkPad, ThinkCentre y ThinkSystem diseñadas para entornos corporativos exigentes. Sus equipos incluyen protecciones de hardware como TPM, encriptación de disco y gestión remota fuera de banda.',
     how:'Como Authorized Partner, proveemos, configuramos y desplegamos equipamiento Lenovo con las políticas de seguridad correctas desde el primer día. No entregamos un equipo genérico: cada dispositivo sale configurado con encriptación activa, gestión centralizada y acceso remoto seguro para soporte.',
     cases:['Renovación de parque de PCs y laptops con configuración segura de fábrica','Servidores ThinkSystem para virtualización y almacenamiento crítico','Dispositivos configurados para trabajo remoto seguro con VPN integrada','Estaciones de trabajo ThinkStation para entornos de alto rendimiento','Gestión centralizada de activos de hardware con inventario automático'],
     products:['ThinkPad','ThinkCentre','ThinkSystem','ThinkStation','ThinkBook']
   },
   bitrix:{
-    color:'#0099B5',icon:'⚡',name:'Bitrix24',cert:'Silver Partner',
+    color:'#0099B5',logoTxt:'Bitrix24',logoColor:'#2C9FD4',name:'Bitrix24',cert:'Silver Partner',
     what:'Bitrix24 es la plataforma all-in-one para empresas que centraliza CRM, comunicación interna, gestión de proyectos, automatización de procesos y videollamadas. Con más de 15 millones de empresas usuarias en el mundo, elimina la necesidad de múltiples herramientas dispersas.',
     how:'Como Silver Partner certificado, implementamos y personalizamos Bitrix24 para que tu empresa trabaje de forma más organizada, segura y conectada. Migramos tus datos, entrenamos a tu equipo y configuramos los flujos de trabajo adaptados a tu operación real.',
     cases:['CRM para gestión integral de clientes, leads y oportunidades de venta','Comunicación interna unificada: chat, videollamadas y tareas en un solo lugar','Automatización de procesos comerciales y aprobaciones','Gestión de proyectos con asignación de tareas y seguimiento en tiempo real','Portal del empleado e intranet para empresas con equipos distribuidos'],
     products:['CRM & Pipeline','Intranet & Portal','Gestión de Proyectos','Automatización','Video HD']
+  },
+  cato:{
+    color:'#158864',logoTxt:'Cato',logoColor:'#158864',name:'Cato Networks',cert:'SASE Partner',
+    what:'Cato Networks es el pionero global de SASE (Secure Access Service Edge): una plataforma cloud-native que unifica red y seguridad en un único servicio. Conecta de forma segura todas tus sedes, usuarios remotos y aplicaciones en la nube a través de una red privada global, sin appliances complejos.',
+    how:'Como partner de Cato, reemplazamos tu mix de VPNs, firewalls y enlaces MPLS por una sola plataforma gestionada. Conectamos tus oficinas y empleados remotos a la red global de Cato, con seguridad de nivel empresarial aplicada de forma uniforme en todos lados — y la administramos por vos.',
+    cases:['Conexión segura de sucursales y empleados remotos sin VPNs tradicionales','Reemplazo de enlaces MPLS costosos por SD-WAN cloud-native','Seguridad uniforme (FWaaS, IPS, anti-malware) para todo el tráfico','Acceso Zero Trust (ZTNA) a aplicaciones internas y en la nube','Optimización y monitoreo del rendimiento de red en tiempo real'],
+    products:['SASE Cloud','SD-WAN','FWaaS','ZTNA','SSE 360']
   }
 };
 const overlay=document.getElementById('pmOverlay'),pmCard=document.getElementById('pmCard');
@@ -1414,7 +1452,8 @@ const pmBody=document.getElementById('pmBody');
 function openPartner(key){
   const p=partners[key];if(!p)return;
   pmBar.style.background=p.color;
-  pmIco.textContent=p.icon;
+  if(p.logo)pmIco.innerHTML=`<img src="${p.logo}" alt="${p.name}" style="max-width:40px;max-height:40px;object-fit:contain">`;
+  else pmIco.innerHTML=`<span style="font-weight:800;font-size:1.05rem;letter-spacing:-.02em;color:${p.logoColor||p.color}">${p.logoTxt||p.name}</span>`;
   pmTitle.textContent=p.name;
   pmCert.textContent=p.cert;pmCert.style.color=p.color;
   pmBody.innerHTML=`
