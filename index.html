@@ -3,882 +3,139 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ciberseguridad para Empresas y Pymes | Argensys</title>
-  <meta name="description" content="Argensys protege tu empresa con ciberseguridad real: firewall Fortinet, anti-ransomware, EDR y soporte 24/7. Partner certificado Fortinet, IBM y Lenovo. +20 años en Argentina."/>
-  <meta name="keywords" content="ciberseguridad empresas Argentina, firewall pymes, protección ransomware, Fortinet partner Argentina, seguridad informática Buenos Aires"/>
+  <title>Argensys | Ciberseguridad e IT para Empresas y Pymes en Argentina</title>
+  <meta name="description" content="Más de 20 años protegiendo empresas argentinas. Ciberseguridad Fortinet, infraestructura IT, soporte 24/7, Bitrix24 y SASE con Cato. Partner certificado Fortinet, IBM, Lenovo y Bitrix24."/>
+  <meta name="keywords" content="ciberseguridad empresas Argentina, infraestructura IT, soporte IT pymes, Fortinet partner Argentina, Bitrix24, SASE Cato, seguridad informática Buenos Aires"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://www.argensys.com.ar/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://www.argensys.com.ar/"/>
-  <meta property="og:title" content="Ciberseguridad para Empresas y Pymes | Argensys"/>
-  <meta property="og:description" content="Ciberseguridad empresarial con más de 20 años de experiencia. Partner certificado Fortinet, IBM y Lenovo en Argentina."/>
+  <meta property="og:title" content="Argensys | Ciberseguridad e IT para Empresas y Pymes"/>
+  <meta property="og:description" content="Tecnología empresarial con más de 20 años de experiencia. Partner certificado Fortinet, IBM, Lenovo y Bitrix24 en Argentina."/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:site" content="@argensysok"/>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Argensys IT Services S.R.L.","url":"https://www.argensys.com.ar","telephone":"+5491157317988","email":"info@argensys.com.ar","address":{"@type":"PostalAddress","addressLocality":"Buenos Aires","addressCountry":"AR"},"areaServed":"AR"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Argensys IT Services S.R.L.","url":"https://www.argensys.com.ar","telephone":"+5491157317988","email":"info@argensys.com.ar","address":{"@type":"PostalAddress","addressLocality":"Buenos Aires","addressCountry":"AR"},"areaServed":"AR","foundingDate":"2006"}</script>
+  <link rel="icon" href="logos/argensys.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <script>window.ARG_BASE="";</script>
 <style>
-/* ── TOKENS ─────────────────────────────── */
-:root{
-  --white:  #FFFFFF;
-  --bg:     #FFFFFF;
-  --bg2:    #F2F6FF;
-  --bg3:    #E6EEFF;
-  --navy:   #0B1E52;
-  --blue:   #1755C4;
-  --blue2:  #2B70E8;
-  --cyan:   #0099B5;
-  --cyan2:  #00B4D0;
-  --text:   #0B1E52;
-  --t2:     #4A5C88;
-  --t3:     #8895B2;
-  --t4:     #B8C2D8;
-  --border: rgba(23,85,196,.1);
-  --bord2:  rgba(23,85,196,.2);
-  --bord3:  rgba(23,85,196,.35);
-  --sh:     0 2px 16px rgba(23,85,196,.08);
-  --sh2:    0 8px 32px rgba(23,85,196,.12);
-  --sh3:    0 16px 48px rgba(23,85,196,.16);
-  --ease:   cubic-bezier(.4,0,.2,1);
-  --r:      12px;
-  --rlg:    20px;
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
-body{
-  font-family:'Montserrat',sans-serif;
-  background:var(--bg);color:var(--text);
-  overflow-x:hidden;-webkit-font-smoothing:antialiased;
-}
-a{text-decoration:none;color:inherit}
-ul{list-style:none}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--bg2)}
-::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px;opacity:.5}
-
-/* ── WRAP ───────────────────────────────── */
-.w{max-width:1200px;margin:0 auto;padding:0 36px}
-
-/* ── LOGO IMG ───────────────────────────── */
-.lmark{flex-shrink:0;display:block;object-fit:contain}
-.lmark-dark{
-  background:#fff;border-radius:8px;padding:3px;
-  box-shadow:0 2px 8px rgba(0,0,0,.15);
-}
-
-/* ── NAV ────────────────────────────────── */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:900;
-  padding:20px 0;background:rgba(255,255,255,0);
-  border-bottom:1px solid transparent;
-  transition:all .3s var(--ease);
-}
-.nav.on{
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(16px);
-  padding:13px 0;
-  border-color:var(--border);
-  box-shadow:var(--sh);
-}
-.nav-i{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;color:var(--navy);letter-spacing:-.01em}
-.nav-links{display:flex;align-items:center;gap:28px}
-.nav-links a{font-size:.875rem;font-weight:500;color:var(--t2);transition:color .2s}
-.nav-links a:hover{color:var(--navy)}
-.nav-btn{
-  font-size:.85rem;font-weight:700;
-  background:linear-gradient(135deg,var(--blue),var(--cyan));
-  color:#fff;padding:9px 22px;border-radius:8px;
-  transition:opacity .2s,transform .2s,box-shadow .2s;white-space:nowrap;
-  box-shadow:0 4px 14px rgba(23,85,196,.25);
-}
-.nav-btn:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(23,85,196,.35)}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
-
-/* ── HERO ───────────────────────────────── */
-.hero{
-  min-height:100svh;
-  display:flex;align-items:center;
-  padding:130px 0 80px;
-  position:relative;overflow:hidden;
-  background:linear-gradient(160deg,#fff 0%,#EEF3FF 55%,#E0EAFF 100%);
-}
-.hero-blob{
-  position:absolute;inset:0;pointer-events:none;overflow:hidden;
-}
-.hero-blob::before{
-  content:'';position:absolute;
-  width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(23,85,196,.07) 0%,transparent 70%);
-  top:-200px;right:-150px;
-}
-.hero-blob::after{
-  content:'';position:absolute;
-  width:500px;height:500px;border-radius:50%;
-  background:radial-gradient(circle,rgba(0,153,181,.06) 0%,transparent 70%);
-  bottom:-100px;left:-100px;
-}
-.hero-dots{
-  position:absolute;inset:0;pointer-events:none;
-  background-image:radial-gradient(rgba(23,85,196,.12) 1.5px, transparent 1.5px);
-  background-size:36px 36px;
-  mask-image:radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 80%);
-}
-
-.hero-inner{
-  position:relative;z-index:1;
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:64px;align-items:center;width:100%;
-}
-
-/* Hero text */
-.hero-kicker{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'Montserrat',sans-serif;
-  font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--blue);margin-bottom:24px;
-  animation:slideUp .6s 2.25s both;
-}
+/* ── Home-only styles (hero, intro, ticker, checklist) ── */
+.hero{min-height:100svh;display:flex;align-items:center;padding:130px 0 80px;position:relative;overflow:hidden;background:linear-gradient(160deg,#fff 0%,#EEF3FF 55%,#E0EAFF 100%)}
+.hero-blob{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-blob::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(23,85,196,.07) 0%,transparent 70%);top:-200px;right:-150px}
+.hero-blob::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,153,181,.06) 0%,transparent 70%);bottom:-100px;left:-100px}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(23,85,196,.12) 1.5px,transparent 1.5px);background-size:36px 36px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black 20%,transparent 80%)}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;width:100%}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:24px;animation:slideUp .6s 2.25s both}
 .hero-kicker-line{width:24px;height:2px;background:var(--blue);border-radius:1px;display:block}
-
-.hero-h1{
-  font-family:'Montserrat',sans-serif;
-  font-size:clamp(2.4rem,4.4vw,4rem);
-  font-weight:700;line-height:1.1;letter-spacing:-.025em;
-  color:var(--navy);margin-bottom:22px;
-  animation:heroTitle 1.05s 2.4s both;
-}
-.hero-h1 em{
-  font-style:italic;
-  background:linear-gradient(135deg,var(--blue),var(--cyan));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-
-.hero-sub{
-  font-size:1.06rem;color:var(--t2);line-height:1.7;
-  max-width:480px;margin-bottom:36px;
-  animation:slideUp .65s 2.58s both;
-}
-
-.hero-ctas{
-  display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;
-  animation:slideUp .65s 2.72s both;
-}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'Montserrat',sans-serif;font-weight:700;
-  font-size:.9rem;border:none;cursor:pointer;
-  border-radius:9px;padding:13px 26px;
-  transition:all .25s var(--ease);
-}
-.btn.solid{
-  background:linear-gradient(135deg,var(--blue),var(--blue2));
-  color:#fff;box-shadow:0 4px 16px rgba(23,85,196,.3);
-}
-.btn.solid:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(23,85,196,.38)}
-.btn.outline{
-  background:#fff;color:var(--blue);
-  border:1.5px solid var(--bord2);box-shadow:var(--sh);
-}
-.btn.outline:hover{border-color:var(--bord3);background:var(--bg2);transform:translateY(-1px)}
-
-.hero-metrics{
-  display:flex;gap:32px;flex-wrap:wrap;
-  padding-top:24px;border-top:1px solid var(--border);
-  animation:slideUp .65s 2.86s both;
-}
-.hero-m-n{
-  font-family:'Montserrat',sans-serif;
-  font-size:1.9rem;font-weight:700;color:var(--navy);
-  letter-spacing:-.03em;line-height:1;
-}
+.hero-h1{font-weight:800;font-size:clamp(2.4rem,4.4vw,4rem);line-height:1.1;letter-spacing:-.03em;color:var(--navy);margin-bottom:22px;animation:heroTitle 1.05s 2.4s both}
+.hero-h1 em{font-style:normal;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.06rem;color:var(--t2);line-height:1.7;max-width:480px;margin-bottom:36px;animation:slideUp .65s 2.58s both}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;animation:slideUp .65s 2.72s both}
+.hero-metrics{display:flex;gap:32px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--border);animation:slideUp .65s 2.86s both}
+.hero-m-n{font-weight:800;font-size:1.9rem;color:var(--navy);letter-spacing:-.03em;line-height:1}
 .hero-m-l{font-size:.72rem;color:var(--t3);margin-top:4px;font-weight:500;text-transform:uppercase;letter-spacing:.04em}
-
-/* Partner cards in hero */
-.hero-partners{
-  display:grid;grid-template-columns:1fr 1fr;gap:14px;
-  animation:slideRight .85s .2s both;
-}
-@keyframes slideRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
-@keyframes slideUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-.hero-partners{animation-delay:2.5s!important}
-
-.pc{
-  background:#fff;
-  border:1.5px solid var(--border);
-  border-radius:var(--r);
-  padding:26px 20px 22px;
-  position:relative;overflow:hidden;
-  transition:border-color .3s,transform .3s,box-shadow .3s;
-  box-shadow:var(--sh);
-}
-.pc:hover{transform:translateY(-4px);box-shadow:var(--sh3)}
-.pc-top{position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--r) var(--r) 0 0}
-.pc-logo{
-  height:34px;margin-bottom:16px;
-  display:flex;align-items:center;
-}
-.pc-logo img{max-height:32px;max-width:100%;width:auto;object-fit:contain;display:block}
-.pc-logo .pc-wordmark{
-  font-weight:800;font-size:1.45rem;letter-spacing:-.02em;line-height:1;
-}
-.pc-logo .pc-wordmark small{
-  display:block;font-size:.5rem;font-weight:700;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--t3);margin-top:3px;
-}
-.pc-cert{
-  font-family:'Montserrat',sans-serif;
-  font-size:.66rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
-}
-.pc-badge{
-  display:inline-flex;align-items:center;gap:5px;
-  margin-top:14px;font-size:.7rem;color:var(--t3);
-}
-.pc-badge::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;background:currentColor}
-.pc-arrow{
-  margin-top:16px;font-size:.72rem;font-weight:700;color:var(--blue);
-  display:flex;align-items:center;gap:5px;
-  font-family:'Montserrat',sans-serif;letter-spacing:.04em;
-  transition:gap .2s;
-}
-.pc:hover .pc-arrow{gap:9px}
-button.pc{
-  text-align:left;width:100%;cursor:pointer;
-  font-family:inherit;appearance:none;-webkit-appearance:none;
-}
-button.pc:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-
-/* ── PARTNER MODAL ──────────────────────── */
-.pm-overlay{
-  position:fixed;inset:0;z-index:1100;
-  background:rgba(11,30,82,.52);backdrop-filter:blur(10px);
-  display:flex;align-items:center;justify-content:center;
-  padding:20px;
-  opacity:0;pointer-events:none;
-  transition:opacity .3s var(--ease);
-}
-.pm-overlay.open{opacity:1;pointer-events:all}
-.pm-card{
-  background:#fff;border-radius:20px;
-  max-width:620px;width:100%;
-  max-height:90dvh;overflow-y:auto;
-  box-shadow:0 32px 80px rgba(11,30,82,.28);
-  transform:translateY(28px) scale(.97);
-  transition:transform .35s var(--ease);
-  position:relative;
-}
-.pm-overlay.open .pm-card{transform:none}
-.pm-close{
-  position:sticky;top:0;float:right;
-  width:34px;height:34px;border-radius:50%;
-  border:1.5px solid var(--border);background:var(--bg2);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;font-size:.85rem;color:var(--t2);
-  transition:all .2s;margin:16px 16px -50px auto;z-index:2;
-  flex-shrink:0;
-}
-.pm-close:hover{background:var(--bg3);border-color:var(--bord2)}
-.pm-top-bar{height:4px;border-radius:20px 20px 0 0;width:100%}
-.pm-head{padding:28px 36px 22px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--border)}
-.pm-ico{
-  width:54px;height:54px;border-radius:13px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.6rem;border:1.5px solid var(--border);
-  background:#fff;box-shadow:var(--sh);flex-shrink:0;
-}
-.pm-brand-name{font-size:1.5rem;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.02em;line-height:1}
-.pm-brand-cert{font-family:'Montserrat',sans-serif;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
-.pm-body{padding:28px 36px 36px;display:flex;flex-direction:column;gap:24px}
-.pm-section-title{
-  font-size:.68rem;font-weight:700;text-transform:uppercase;
-  letter-spacing:.13em;color:var(--t3);margin-bottom:9px;
-  font-family:'Montserrat',sans-serif;
-}
-.pm-text{font-size:.92rem;color:var(--t2);line-height:1.72}
-.pm-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-.pm-chip{
-  font-size:.7rem;font-weight:600;color:var(--blue);
-  background:var(--bg2);border:1px solid var(--border);
-  border-radius:100px;padding:5px 12px;
-}
-.pm-cases{display:flex;flex-direction:column;gap:9px}
-.pm-case{
-  display:flex;align-items:flex-start;gap:10px;
-  font-size:.88rem;color:var(--t2);line-height:1.5;
-}
-.pm-case::before{
-  content:'';width:6px;height:6px;border-radius:50%;
-  flex-shrink:0;margin-top:6px;
-  background:var(--dot,var(--blue));
-}
-.pm-cta{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  padding:14px 24px;
-  background:linear-gradient(135deg,var(--blue),var(--blue2));
-  color:#fff;border:none;border-radius:10px;
-  font-weight:700;font-size:.9rem;cursor:pointer;
-  font-family:'Montserrat',sans-serif;
-  text-decoration:none;margin-top:8px;
-  transition:opacity .2s,transform .2s,box-shadow .2s;
-  box-shadow:0 4px 16px rgba(23,85,196,.3);
-}
-.pm-cta:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 8px 24px rgba(23,85,196,.4)}
-@media(max-width:600px){.pm-head{padding:22px 22px 18px}.pm-body{padding:20px 22px 28px}}
-
-.pc-fortinet{--c:#E8442A}
-.pc-fortinet .pc-top{background:var(--c)}
-.pc-fortinet .pc-cert{color:var(--c)}
-.pc-fortinet:hover{border-color:rgba(232,68,42,.25);box-shadow:0 16px 40px rgba(232,68,42,.1),var(--sh2)}
-
-.pc-ibm{--c:#1755C4}
-.pc-ibm .pc-top{background:var(--c)}
-.pc-ibm .pc-cert{color:var(--c)}
-.pc-ibm:hover{border-color:rgba(23,85,196,.3);box-shadow:0 16px 40px rgba(23,85,196,.12),var(--sh2)}
-
-.pc-lenovo{--c:#E65C00}
-.pc-lenovo .pc-top{background:var(--c)}
-.pc-lenovo .pc-cert{color:var(--c)}
-.pc-lenovo:hover{border-color:rgba(230,92,0,.25);box-shadow:0 16px 40px rgba(230,92,0,.1),var(--sh2)}
-
-.pc-bitrix{--c:#0099B5}
-.pc-bitrix .pc-top{background:var(--c)}
-.pc-bitrix .pc-cert{color:var(--c)}
-.pc-bitrix:hover{border-color:rgba(0,153,181,.3);box-shadow:0 16px 40px rgba(0,153,181,.12),var(--sh2)}
-
-.pc-cato{--c:#158864}
-.pc-cato .pc-top{background:var(--c)}
-.pc-cato .pc-cert{color:var(--c)}
-.pc-cato:hover{border-color:rgba(21,136,100,.3);box-shadow:0 16px 40px rgba(21,136,100,.12),var(--sh2)}
-
-/* Wide partner card (spans full row) */
-.pc--wide{
-  grid-column:1/-1;
-  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
-  padding-top:22px;padding-bottom:22px;
-}
-.pc--wide .pc-logo{margin-bottom:0;flex-shrink:0}
-.pc--wide .pc-wide-mid{display:flex;flex-direction:column;gap:4px}
-.pc--wide .pc-badge{margin-top:6px}
-.pc--wide .pc-arrow{margin:0 0 0 auto}
-@media(max-width:560px){
-  .pc--wide{gap:14px}
-  .pc--wide .pc-arrow{margin:8px 0 0 0}
-}
-
-/* ── TICKER ─────────────────────────────── */
-.ticker{
-  background:linear-gradient(90deg,#FFF5F5,#FFF0F0);
-  border-top:1px solid rgba(220,38,38,.12);
-  border-bottom:1px solid rgba(220,38,38,.12);
-  padding:10px 0;overflow:hidden;
-}
+.hero-partners{display:grid;grid-template-columns:1fr 1fr;gap:14px;animation:slideRight .85s 2.5s both}
+.ticker{background:linear-gradient(90deg,#FFF5F5,#FFF0F0);border-top:1px solid rgba(220,38,38,.12);border-bottom:1px solid rgba(220,38,38,.12);padding:10px 0;overflow:hidden}
 .ticker-track{display:flex;animation:tick 30s linear infinite;white-space:nowrap}
-.ticker-item{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:0 36px;font-size:.78rem;color:#C0392B;
-  font-family:'Montserrat',sans-serif;
-}
-.ticker-item b{color:#A93226;font-weight:600}
+.ticker-item{display:inline-flex;align-items:center;gap:10px;padding:0 36px;font-size:.78rem;color:#C0392B}
+.ticker-item b{color:#A93226;font-weight:700}
 .ticker-sep{color:rgba(192,57,43,.3)}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* ── SECTIONS ───────────────────────────── */
-.sec{padding:96px 0}
-.sec--white{background:#fff}
-.sec--tint{background:var(--bg2)}
-.sec--blue{background:linear-gradient(135deg,var(--navy) 0%,#1233A0 100%)}
-.sec--navy{background:var(--navy)}
-
-.lbl{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'Montserrat',sans-serif;
-  font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--blue);margin-bottom:14px;
-}
-.lbl::before{content:'';width:18px;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:1px;display:block}
-.lbl.inv{color:rgba(255,255,255,.6)}
-.lbl.inv::before{background:rgba(255,255,255,.4)}
-
-.dsp{
-  font-family:'Montserrat',sans-serif;
-  font-size:clamp(1.9rem,3.6vw,2.9rem);
-  font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--navy);margin-bottom:14px;
-}
-.dsp em{font-style:italic;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.dsp.inv{color:#fff}
-.dsp.inv em{background:linear-gradient(135deg,#90B8FF,#7EEEFF);-webkit-background-clip:text;background-clip:text}
-.body{font-size:1.05rem;color:var(--t2);line-height:1.72;max-width:580px}
-.body.inv{color:rgba(255,255,255,.7)}
-
-.rv{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.rv.in{opacity:1;transform:none}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.26s}
-.d4{transition-delay:.36s}.d5{transition-delay:.46s}
-
-/* ── STATS BANNER ───────────────────────── */
-.stats-banner{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.sb-inner{display:grid;grid-template-columns:repeat(4,1fr)}
-.sb-cell{
-  padding:36px 32px;border-right:1px solid var(--border);
-  transition:background .25s;
-}
-.sb-cell:last-child{border-right:none}
-.sb-cell:hover{background:var(--bg2)}
-.sb-n{
-  font-family:'Montserrat',sans-serif;
-  font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;
-  line-height:1;letter-spacing:-.04em;
-  background:linear-gradient(135deg,var(--blue),var(--cyan));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin-bottom:8px;
-}
-.sb-l{font-size:.84rem;color:var(--t2);font-weight:500;line-height:1.4}
-
-/* ── CHECKLIST ──────────────────────────── */
 .check-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
 .check-left{position:sticky;top:120px}
-.check-eyebrow{
-  font-family:'Montserrat',sans-serif;
-  font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700;
-  line-height:1.2;letter-spacing:-.02em;color:var(--navy);margin-bottom:16px;
-}
-.check-eyebrow em{font-style:italic;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.check-eyebrow{font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.2;letter-spacing:-.02em;color:var(--navy);margin-bottom:16px}
+.check-eyebrow em{font-style:normal;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .check-note{font-size:.88rem;color:var(--t2);line-height:1.65;max-width:300px;margin-bottom:28px}
 .check-list{display:flex;flex-direction:column}
-.check-item{
-  display:flex;align-items:flex-start;gap:16px;
-  padding:18px 0;border-bottom:1px solid var(--border);
-  cursor:pointer;
-}
+.check-item{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid var(--border);cursor:pointer}
 .check-item:last-child{border-bottom:none}
-.check-box{
-  width:22px;height:22px;border-radius:6px;
-  border:1.5px solid var(--bord2);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;margin-top:2px;font-size:.7rem;
-  color:transparent;transition:all .25s;background:#fff;
-  box-shadow:var(--sh);
-}
-.check-item.chk .check-box{
-  background:linear-gradient(135deg,var(--blue),var(--cyan));
-  border-color:transparent;color:#fff;box-shadow:0 4px 12px rgba(23,85,196,.3);
-}
+.check-box{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--bord2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:.7rem;color:transparent;transition:all .25s;background:#fff;box-shadow:var(--sh)}
+.check-item.chk .check-box{background:linear-gradient(135deg,var(--blue),var(--cyan));border-color:transparent;color:#fff;box-shadow:0 4px 12px rgba(23,85,196,.3)}
 .check-text{font-size:.94rem;color:var(--t2);line-height:1.55;transition:color .25s;font-weight:500}
 .check-item.chk .check-text{color:var(--t3);text-decoration:line-through;text-decoration-color:var(--t4)}
-.check-result{
-  margin-top:20px;padding:18px 22px;
-  background:var(--bg2);border:1.5px solid var(--border);
-  border-radius:var(--r);font-size:.88rem;color:var(--t2);line-height:1.6;
-}
+.check-result{margin-top:20px;padding:18px 22px;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--r);font-size:.88rem;color:var(--t2);line-height:1.6}
 .check-result a{color:var(--blue);text-decoration:underline}
-
-/* ── SERVICES ───────────────────────────── */
-.svc-header{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:56px}
-.svc-list{border-top:1.5px solid var(--border)}
-.svc-row{border-bottom:1.5px solid var(--border);overflow:hidden}
-.svc-btn{
-  display:grid;grid-template-columns:52px 1fr 32px;
-  align-items:center;gap:20px;
-  padding:22px 0;cursor:pointer;background:none;
-  border:none;width:100%;text-align:left;transition:background .2s;
-}
-.svc-btn:hover .svc-name{color:var(--navy)}
-.svc-num{font-family:'Montserrat',sans-serif;font-size:.75rem;color:var(--t4);letter-spacing:.04em}
-.svc-name{font-size:1rem;font-weight:600;color:var(--t2);transition:color .2s;display:flex;flex-direction:column;gap:3px}
-.svc-sub{font-size:.75rem;font-weight:400;color:var(--t3);font-family:'Montserrat',sans-serif}
-.svc-arr{
-  width:28px;height:28px;border-radius:50%;
-  border:1.5px solid var(--border);display:flex;align-items:center;
-  justify-content:center;font-size:.75rem;color:var(--t3);flex-shrink:0;
-  transition:all .3s var(--ease);background:#fff;box-shadow:var(--sh);
-}
-.svc-row.open .svc-arr{transform:rotate(45deg);border-color:var(--blue);color:var(--blue);background:var(--bg2);box-shadow:none}
-.svc-row.open .svc-name{color:var(--navy)}
-.svc-row.open .svc-num{color:var(--blue)}
-.svc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease)}
-.svc-row.open .svc-body{grid-template-rows:1fr}
-.svc-inner{overflow:hidden;padding:0 0 0 72px}
-.svc-content{padding:4px 0 28px;display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
-.svc-desc{font-size:.9rem;color:var(--t2);line-height:1.7}
-.svc-tags{display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start}
-.svc-tag{
-  font-size:.7rem;font-weight:600;color:var(--blue);
-  background:var(--bg2);border:1px solid var(--border);
-  border-radius:100px;padding:4px 11px;
-}
-
-/* ── PROCESS ────────────────────────────── */
-.process-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:0;margin-top:56px;position:relative;
-}
-.process-grid::before{
-  content:'';position:absolute;
-  top:28px;left:calc(12.5% + 8px);right:calc(12.5% + 8px);
-  height:2px;
-  background:linear-gradient(90deg,transparent,var(--border),var(--border),transparent);
-}
-.ps{
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;padding:0 20px;position:relative;z-index:1;
-}
-.ps-num{
-  width:56px;height:56px;border-radius:50%;
-  background:#fff;border:2px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Montserrat',sans-serif;font-size:.78rem;
-  font-weight:500;color:var(--blue);margin-bottom:20px;
-  transition:all .3s;box-shadow:var(--sh);
-}
-.ps:hover .ps-num{
-  border-color:var(--blue);background:var(--bg2);
-  box-shadow:0 4px 20px rgba(23,85,196,.2);
-}
-.ps-t{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:8px}
-.ps-d{font-size:.82rem;color:var(--t2);line-height:1.55}
-
-/* ── CLIENTS ────────────────────────────── */
-.clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:44px 0}
-.cl{
-  background:#fff;border:1.5px solid var(--border);
-  border-radius:var(--r);padding:18px 22px;
-  font-size:.9rem;font-weight:600;color:var(--navy);
-  display:flex;align-items:center;gap:10px;
-  transition:border-color .2s,box-shadow .2s,transform .2s;
-  box-shadow:var(--sh);
-}
-.cl::before{
-  content:'';width:7px;height:7px;border-radius:50%;
-  background:linear-gradient(135deg,var(--blue),var(--cyan));flex-shrink:0;
-}
-.cl:hover{border-color:var(--bord3);box-shadow:var(--sh2);transform:translateY(-2px)}
-.testi{
-  background:#fff;border:1.5px solid var(--border);
-  border-radius:var(--rlg);padding:48px 56px;
-  margin-top:40px;box-shadow:var(--sh2);
-  position:relative;overflow:hidden;
-}
-.testi::before{
-  content:'"';
-  font-family:'Montserrat',sans-serif;
-  font-size:10rem;color:var(--bg3);line-height:1;
-  position:absolute;top:-20px;left:32px;
-  pointer-events:none;font-weight:700;
-}
-.testi-q{
-  font-family:'Montserrat',sans-serif;
-  font-size:clamp(1.05rem,2.2vw,1.38rem);font-weight:600;
-  line-height:1.6;color:var(--navy);font-style:italic;
-  margin-bottom:28px;position:relative;z-index:1;
-}
-.testi-author{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
-.testi-av{
-  width:42px;height:42px;border-radius:50%;
-  background:linear-gradient(135deg,var(--blue),var(--cyan));
-  display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:.9rem;color:#fff;flex-shrink:0;
-}
-.testi-name{font-size:.87rem;font-weight:700;color:var(--navy)}
-.testi-role{font-size:.75rem;color:var(--t3);margin-top:2px}
-
-/* ── CTA DARK ───────────────────────────── */
-.cta-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.cta-contacts{display:flex;flex-direction:column;gap:10px;margin-top:28px}
-.cta-ct{
-  display:flex;align-items:center;gap:14px;
-  padding:14px 18px;background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);border-radius:var(--r);
-  transition:border-color .2s,background .2s,transform .2s;color:#fff;
-}
-.cta-ct:hover{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.1);transform:translateX(4px)}
-.cta-ct-ico{
-  width:36px;height:36px;border-radius:8px;
-  background:rgba(255,255,255,.1);
-  display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;
-}
-.cta-ct-l{font-size:.7rem;color:rgba(255,255,255,.5)}
-.cta-ct-v{font-weight:700;color:#fff;font-size:.88rem}
-
-/* form — white on dark */
-.form-card{
-  background:#fff;border-radius:var(--rlg);padding:40px;
-  box-shadow:0 24px 60px rgba(0,0,0,.25);
-}
-.form-title{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:22px}
-.fg{margin-bottom:13px}
-.fg label{display:block;font-size:.75rem;font-weight:600;color:var(--t2);margin-bottom:5px}
-.fg input,.fg select,.fg textarea{
-  width:100%;background:var(--bg2);border:1.5px solid var(--border);
-  border-radius:8px;padding:10px 13px;color:var(--navy);
-  font-size:.88rem;font-family:'Montserrat',sans-serif;
-  outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;
-}
-.fg input:focus,.fg select:focus,.fg textarea:focus{
-  border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,85,196,.1);background:#fff;
-}
-.fg select{cursor:pointer}
-.fg textarea{resize:vertical;min-height:90px}
-.fr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.fsub{
-  width:100%;
-  background:linear-gradient(135deg,var(--blue),var(--blue2));
-  color:#fff;border:none;padding:13px;border-radius:9px;
-  font-weight:800;font-size:.9rem;cursor:pointer;
-  font-family:'Montserrat',sans-serif;margin-top:4px;
-  transition:opacity .2s,transform .2s,box-shadow .2s;
-  box-shadow:0 4px 16px rgba(23,85,196,.3);
-}
-.fsub:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 8px 24px rgba(23,85,196,.4)}
-
-/* ── FOOTER ─────────────────────────────── */
-.foot{background:var(--navy);padding:56px 0 28px}
-.foot-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:44px}
-.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.foot-logo-name{font-weight:800;font-size:1.05rem;color:#fff}
-.foot-tag{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.65;max-width:250px;margin-bottom:22px}
-.fsoc{display:flex;gap:8px}
-.fsoc-l{
-  width:30px;height:30px;border-radius:6px;
-  border:1px solid rgba(255,255,255,.12);
-  display:flex;align-items:center;justify-content:center;
-  font-size:.72rem;color:rgba(255,255,255,.4);font-weight:700;transition:all .2s;
-}
-.fsoc-l:hover{color:#fff;border-color:rgba(255,255,255,.35)}
-.fc-t{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:16px}
-.flinks{display:flex;flex-direction:column;gap:9px}
-.flinks a,.flinks span{font-size:.82rem;color:rgba(255,255,255,.4);transition:color .2s}
-.flinks a:hover{color:rgba(255,255,255,.8)}
-.foot-bot{
-  display:flex;justify-content:space-between;align-items:center;
-  flex-wrap:wrap;gap:12px;
-  padding-top:22px;border-top:1px solid rgba(255,255,255,.08);
-}
-.foot-copy{font-size:.75rem;color:rgba(255,255,255,.3)}
-.foot-certs{display:flex;gap:6px;flex-wrap:wrap}
-.cert{
-  font-size:.68rem;font-weight:600;color:rgba(255,255,255,.4);
-  border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:3px 9px;
-}
-
-/* ── SCROLL PROGRESS ────────────────────── */
-.scroll-bar{
-  position:fixed;top:0;left:0;z-index:960;
-  height:3px;width:0%;
-  background:linear-gradient(90deg,var(--blue),var(--cyan),var(--blue2));
-  border-radius:0 2px 2px 0;
-  pointer-events:none;
-  transition:width .08s linear;
-  box-shadow:0 0 8px rgba(23,85,196,.4);
-}
-
-/* ── INTRO CINEMATIC ────────────────────── */
+/* cinematic intro */
 #intro{position:fixed;inset:0;z-index:3000;pointer-events:none}
-.intro-c{
-  position:fixed;top:0;height:100%;width:51%;
-  background:var(--navy);z-index:3001;
-  transition:transform 1.05s cubic-bezier(.86,0,.07,1);
-}
+.intro-c{position:fixed;top:0;height:100%;width:51%;background:var(--navy);z-index:3001;transition:transform 1.05s cubic-bezier(.86,0,.07,1)}
 .intro-cl{left:0}.intro-cr{right:0}
-.intro-cl.out{transform:translateX(-101%)}
-.intro-cr.out{transform:translateX(101%)}
-.intro-mid{
-  position:fixed;inset:0;z-index:3002;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
-  transition:opacity .45s ease;
-}
+.intro-cl.out{transform:translateX(-101%)}.intro-cr.out{transform:translateX(101%)}
+.intro-mid{position:fixed;inset:0;z-index:3002;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .45s ease}
 .intro-mid.out{opacity:0}
-.intro-logo-box{
-  width:72px;height:72px;background:#fff;border-radius:16px;padding:7px;
-  box-shadow:0 12px 40px rgba(0,0,0,.4);
-  opacity:0;transform:scale(.5) translateY(10px);
-  animation:iScale .7s .1s cubic-bezier(.34,1.56,.64,1) forwards;
-}
+.intro-logo-box{width:72px;height:72px;background:#fff;border-radius:16px;padding:7px;box-shadow:0 12px 40px rgba(0,0,0,.4);opacity:0;transform:scale(.5) translateY(10px);animation:iScale .7s .1s cubic-bezier(.34,1.56,.64,1) forwards}
 .intro-logo-box img{width:100%;height:100%;object-fit:contain;display:block}
-.intro-brand-name{
-  font-family:'Montserrat',sans-serif;
-  font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;
-  color:#fff;letter-spacing:.16em;line-height:1;
-  opacity:0;transform:translateY(18px);
-  animation:iUp .65s .72s ease forwards;
-}
-.intro-sep{
-  width:0;height:1px;background:rgba(255,255,255,.28);
-  animation:iLine .55s 1s ease forwards;
-}
+.intro-brand-name{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;color:#fff;letter-spacing:.16em;line-height:1;opacity:0;transform:translateY(18px);animation:iUp .65s .72s ease forwards}
+.intro-sep{width:0;height:1px;background:rgba(255,255,255,.28);animation:iLine .55s 1s ease forwards}
 @keyframes iLine{to{width:130px}}
-.intro-tagline{
-  font-family:'Montserrat',sans-serif;
-  font-size:.65rem;color:rgba(255,255,255,.42);
-  letter-spacing:.24em;text-transform:uppercase;
-  opacity:0;animation:iFade .5s 1.15s ease forwards;
-}
-@keyframes iScale{to{opacity:1;transform:none}}
-@keyframes iUp{to{opacity:1;transform:none}}
-@keyframes iFade{to{opacity:1}}
-
-/* hero title cinematic keyframe */
-@keyframes heroTitle{
-  0%{opacity:0;transform:translateY(38px) scale(.96);filter:blur(8px)}
-  60%{filter:blur(1px)}
-  100%{opacity:1;transform:none;filter:blur(0)}
-}
-
-/* ── SCROLL REVEAL VARIANTS ─────────────── */
-.rv-l{opacity:0;transform:translateX(-36px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.rv-l.in{opacity:1;transform:none}
-.rv-r{opacity:0;transform:translateX(36px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.rv-r.in{opacity:1;transform:none}
-.rv-s{opacity:0;transform:scale(.88);transition:opacity .75s var(--ease),transform .75s var(--ease)}
-.rv-s.in{opacity:1;transform:scale(1)}
-
-/* ── SECTION DOTS ───────────────────────── */
-.sec-nav{
-  position:fixed;right:18px;top:50%;
-  transform:translateY(-50%);
-  z-index:800;
-  display:flex;flex-direction:column;gap:10px;
-  pointer-events:auto;
-}
-.sec-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:rgba(23,85,196,.18);
-  border:1.5px solid rgba(23,85,196,.3);
-  transition:background .3s,transform .3s,box-shadow .3s;
-  cursor:pointer;display:block;
-}
-.sec-dot:hover{background:rgba(23,85,196,.45)}
-.sec-dot.on{
-  background:var(--blue);
-  transform:scale(1.55);
-  box-shadow:0 0 8px rgba(23,85,196,.5);
-}
-@media(max-width:900px){.sec-nav{display:none}}
-
-/* ── WA ─────────────────────────────────── */
-.wa{
-  position:fixed;bottom:26px;right:26px;z-index:800;
-  width:50px;height:50px;border-radius:50%;background:#25D366;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 18px rgba(37,211,102,.4);transition:transform .25s,box-shadow .25s;
-}
-.wa:hover{transform:scale(1.09);box-shadow:0 8px 28px rgba(37,211,102,.5)}
-.wa svg{width:25px;height:25px;fill:#fff}
-
-/* ── DRAWER ─────────────────────────────── */
-.drawer{
-  display:none;position:fixed;inset:0;z-index:895;
-  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
-  flex-direction:column;align-items:center;justify-content:center;gap:26px;
-}
-.drawer.open{display:flex}
-.drawer a{
-  font-family:'Montserrat',sans-serif;font-size:1.7rem;
-  font-weight:700;color:var(--t2);transition:color .2s;
-}
-.drawer a:hover{color:var(--navy)}
-.drawer-x{position:absolute;top:22px;right:22px;background:none;border:none;color:var(--t2);font-size:1.4rem;cursor:pointer}
-
-/* ── RESPONSIVE ─────────────────────────── */
-@media(max-width:1024px){
-  .hero-inner{grid-template-columns:1fr;gap:48px}
-  .hero-partners{grid-template-columns:repeat(4,1fr)}
-  .sb-inner{grid-template-columns:1fr 1fr}
-  .sb-cell:nth-child(2){border-right:none}
-  .sb-cell:nth-child(1),.sb-cell:nth-child(2){border-bottom:1px solid var(--border)}
-  .check-layout{grid-template-columns:1fr;gap:40px}
-  .check-left{position:static}
-  .svc-header{grid-template-columns:1fr;gap:16px}
-  .process-grid{grid-template-columns:1fr 1fr;gap:40px}
-  .process-grid::before{display:none}
-  .cta-layout{grid-template-columns:1fr;gap:48px}
-  .foot-g{grid-template-columns:1fr 1fr;gap:32px}
-  .clients-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:768px){
-  .w{padding:0 20px}
-  .nav-links,.nav-btn{display:none}
-  .burger{display:flex}
-  .hero{padding:120px 0 64px}
-  .hero-partners{grid-template-columns:1fr 1fr}
-  .svc-content{grid-template-columns:1fr}
-  .svc-inner{padding-left:40px}
-  .process-grid{grid-template-columns:1fr}
-  .testi{padding:28px 24px}
-  .foot-g{grid-template-columns:1fr;gap:28px}
-  .foot-bot{flex-direction:column;align-items:flex-start}
-  .fr{grid-template-columns:1fr}
-  .sec{padding:64px 0}
-  .check-layout,.svc-header{gap:24px}
-}
-@media(max-width:480px){
-  .hero-h1{font-size:2rem}
-  .hero-ctas{flex-direction:column}
-  .btn{width:100%;justify-content:center}
-  .hero-partners{grid-template-columns:1fr 1fr}
-  .clients-grid{grid-template-columns:1fr}
-  .sb-inner{grid-template-columns:1fr}
-  .sb-cell{border-right:none;border-bottom:1px solid var(--border)}
-}
+.intro-tagline{font-size:.65rem;color:rgba(255,255,255,.42);letter-spacing:.24em;text-transform:uppercase;opacity:0;animation:iFade .5s 1.15s ease forwards}
+@keyframes iScale{to{opacity:1;transform:none}}@keyframes iUp{to{opacity:1;transform:none}}@keyframes iFade{to{opacity:1}}
+@media(max-width:1024px){.hero-inner{grid-template-columns:1fr;gap:48px}.hero-partners{grid-template-columns:repeat(4,1fr)}.check-layout{grid-template-columns:1fr;gap:40px}.check-left{position:static}}
+@media(max-width:768px){.hero{padding:120px 0 64px}.hero-partners{grid-template-columns:1fr 1fr}.check-layout{gap:24px}}
+@media(max-width:480px){.hero-h1{font-size:2rem}.hero-ctas{flex-direction:column}.hero-ctas .btn{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
 
-
-<!-- NAV -->
-<!-- Scroll progress -->
 <div class="scroll-bar" id="scrollBar"></div>
+
 <!-- Cinematic intro -->
 <div id="intro">
   <div class="intro-c intro-cl"></div>
   <div class="intro-c intro-cr"></div>
   <div class="intro-mid" id="introMid">
-    <div class="intro-logo-box">
-      <img src="Logo/Logo argensys.png" alt="Argensys">
-    </div>
+    <div class="intro-logo-box"><img src="logos/argensys.png" alt="Argensys"></div>
     <div class="intro-brand-name">ARGENSYS</div>
     <div class="intro-sep"></div>
-    <div class="intro-tagline">Ciberseguridad · Buenos Aires</div>
+    <div class="intro-tagline">Tecnología que funciona · Buenos Aires</div>
   </div>
 </div>
 
-<!-- Section nav dots -->
-<nav class="sec-nav" aria-label="Secciones">
-  <a class="sec-dot" href="#inicio"   aria-label="Inicio"></a>
-  <a class="sec-dot" href="#servicios" aria-label="Servicios"></a>
-  <a class="sec-dot" href="#proceso"  aria-label="Proceso"></a>
-  <a class="sec-dot" href="#clientes" aria-label="Clientes"></a>
-  <a class="sec-dot" href="#contacto" aria-label="Contacto"></a>
-</nav>
-
+<!-- NAV -->
 <nav class="nav" id="nav">
   <div class="w">
     <div class="nav-i">
-      <a href="#inicio" class="nav-logo">
-        <img src="Logo/Logo argensys.png" class="lmark" width="38" height="38" alt="Argensys logo">
+      <a href="index.html" class="nav-logo">
+        <img src="logos/argensys.png" class="lmark" width="36" height="36" alt="Argensys logo"/>
         Argensys
       </a>
       <ul class="nav-links">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#proceso">Cómo trabajamos</a></li>
-        <li><a href="#clientes">Clientes</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li class="nav-drop">
+          <a href="servicios/">Servicios</a>
+          <div class="nav-menu">
+            <a href="infraestructura/"><span class="nm-t">Infraestructura IT</span><span class="nm-d">Servidores, redes y cloud</span></a>
+            <a href="soporte/"><span class="nm-t">Soporte & Help Desk</span><span class="nm-d">Asistencia 24/7</span></a>
+            <a href="ciberseguridad/"><span class="nm-t">Ciberseguridad</span><span class="nm-d">Fortinet · SOC · EDR</span></a>
+            <a href="bitrix24/"><span class="nm-t">Bitrix24 & CRM</span><span class="nm-d">CRM y automatización</span></a>
+          </div>
+        </li>
+        <li><a href="partners/">Partners</a></li>
+        <li><a href="sentinel/">Sentinel</a></li>
+        <li><a href="nosotros/">Nosotros</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="contacto/">Contacto</a></li>
       </ul>
-      <a href="#contacto" class="nav-btn">Diagnóstico gratuito</a>
-      <button class="burger" id="burger" aria-label="Menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="https://wa.me/5491157317988?text=Hola%2C%20quiero%20consultar%20sobre%20sus%20servicios" class="nav-btn" target="_blank" rel="noopener noreferrer">Consultar</a>
+      <button class="burger" id="burger" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 
 <div class="drawer" id="drawer">
-  <button class="drawer-x" id="drawerX">✕</button>
-  <a href="#servicios" class="dl">Servicios</a>
-  <a href="#proceso" class="dl">Cómo trabajamos</a>
-  <a href="#clientes" class="dl">Clientes</a>
-  <a href="#contacto" class="dl">Contacto</a>
+  <button class="drawer-x" id="drawerX" aria-label="Cerrar">✕</button>
+  <a href="servicios/">Servicios</a>
+  <a href="infraestructura/" class="dl-sub">— Infraestructura IT</a>
+  <a href="soporte/" class="dl-sub">— Soporte & Help Desk</a>
+  <a href="ciberseguridad/" class="dl-sub">— Ciberseguridad</a>
+  <a href="bitrix24/" class="dl-sub">— Bitrix24 & CRM</a>
+  <a href="partners/">Partners</a>
+  <a href="sentinel/">Sentinel</a>
+  <a href="nosotros/">Nosotros</a>
+  <a href="blog/">Blog</a>
+  <a href="contacto/">Contacto</a>
 </div>
 
 <main>
@@ -889,87 +146,49 @@ button.pc:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
   <div class="hero-dots" aria-hidden="true"></div>
   <div class="w">
     <div class="hero-inner">
-
-      <!-- text left -->
       <div>
-        <div class="hero-kicker">
-          <span class="hero-kicker-line"></span>
-          Ciberseguridad empresarial · Buenos Aires
-        </div>
-        <h1 class="hero-h1">
-          Tus amenazas<br>son reales.<br>
-          Tu protección<br><em>también debería serlo.</em>
-        </h1>
-        <p class="hero-sub">
-          Más de 20 años blindando pymes y empresas argentinas. No vendemos software — nos convertimos en el equipo de seguridad de tu negocio.
-        </p>
+        <div class="hero-kicker"><span class="hero-kicker-line"></span>Tecnología empresarial · Buenos Aires</div>
+        <h1 class="hero-h1">Tus amenazas<br>son reales.<br>Tu protección<br><em>también debería serlo.</em></h1>
+        <p class="hero-sub">Más de 20 años blindando pymes y empresas argentinas. No vendemos software — nos convertimos en el equipo de tecnología de tu negocio.</p>
         <div class="hero-ctas">
-          <a href="#contacto" class="btn solid">Diagnóstico gratuito →</a>
-          <a href="#servicios" class="btn outline">Ver soluciones</a>
+          <a href="contacto/" class="btn solid">Diagnóstico gratuito →</a>
+          <a href="servicios/" class="btn outline">Ver soluciones</a>
         </div>
         <div class="hero-metrics">
-          <div>
-            <div class="hero-m-n">+20</div>
-            <div class="hero-m-l">Años de experiencia</div>
-          </div>
-          <div>
-            <div class="hero-m-n">24/7</div>
-            <div class="hero-m-l">Soporte garantizado</div>
-          </div>
-          <div>
-            <div class="hero-m-n">100%</div>
-            <div class="hero-m-l">Soluciones a medida</div>
-          </div>
+          <div><div class="hero-m-n">+20</div><div class="hero-m-l">Años de experiencia</div></div>
+          <div><div class="hero-m-n">24/7</div><div class="hero-m-l">Soporte garantizado</div></div>
+          <div><div class="hero-m-n">100%</div><div class="hero-m-l">Soluciones a medida</div></div>
         </div>
       </div>
-
-      <!-- partner cards right -->
-      <div class="hero-partners" aria-label="Partners certificados">
-        <button class="pc pc-fortinet" data-partner="fortinet" aria-label="Ver soluciones Fortinet con Argensys">
-          <div class="pc-top"></div>
-          <div class="pc-logo"><img src="logos/fortinet.svg" alt="Fortinet"></div>
-          <div class="pc-cert">Advanced Partner</div>
-          <div class="pc-badge">Partner certificado</div>
-          <div class="pc-arrow">Cómo te ayudamos →</div>
+      <div class="hero-partners pgrid" aria-label="Partners certificados">
+        <button class="pc pc-fortinet" data-partner="fortinet" aria-label="Ver soluciones Fortinet">
+          <div class="pc-top"></div><div class="pc-logo"><img src="logos/fortinet.svg" alt="Fortinet"></div>
+          <div class="pc-cert">Advanced Partner</div><div class="pc-badge">Partner certificado</div><div class="pc-arrow">Cómo te ayudamos →</div>
         </button>
-        <button class="pc pc-ibm" data-partner="ibm" aria-label="Ver soluciones IBM con Argensys">
-          <div class="pc-top"></div>
-          <div class="pc-logo"><img src="logos/ibm.svg" alt="IBM"></div>
-          <div class="pc-cert">Business Partner</div>
-          <div class="pc-badge">Partner certificado</div>
-          <div class="pc-arrow">Cómo te ayudamos →</div>
+        <button class="pc pc-ibm" data-partner="ibm" aria-label="Ver soluciones IBM">
+          <div class="pc-top"></div><div class="pc-logo"><img src="logos/ibm.svg" alt="IBM"></div>
+          <div class="pc-cert">Business Partner</div><div class="pc-badge">Partner certificado</div><div class="pc-arrow">Cómo te ayudamos →</div>
         </button>
-        <button class="pc pc-lenovo" data-partner="lenovo" aria-label="Ver soluciones Lenovo con Argensys">
-          <div class="pc-top"></div>
-          <div class="pc-logo"><img src="logos/lenovo.svg" alt="Lenovo"></div>
-          <div class="pc-cert">Authorized Partner</div>
-          <div class="pc-badge">Partner certificado</div>
-          <div class="pc-arrow">Cómo te ayudamos →</div>
+        <button class="pc pc-lenovo" data-partner="lenovo" aria-label="Ver soluciones Lenovo">
+          <div class="pc-top"></div><div class="pc-logo"><img src="logos/lenovo.svg" alt="Lenovo"></div>
+          <div class="pc-cert">Authorized Partner</div><div class="pc-badge">Partner certificado</div><div class="pc-arrow">Cómo te ayudamos →</div>
         </button>
-        <button class="pc pc-bitrix" data-partner="bitrix" aria-label="Ver soluciones Bitrix24 con Argensys">
-          <div class="pc-top"></div>
-          <div class="pc-logo"><span class="pc-wordmark" style="color:#2C9FD4">Bitrix24</span></div>
-          <div class="pc-cert">Silver Partner</div>
-          <div class="pc-badge">Partner certificado</div>
-          <div class="pc-arrow">Cómo te ayudamos →</div>
+        <button class="pc pc-bitrix" data-partner="bitrix" aria-label="Ver soluciones Bitrix24">
+          <div class="pc-top"></div><div class="pc-logo"><span class="pc-wordmark" style="color:#2C9FD4">Bitrix24</span></div>
+          <div class="pc-cert">Silver Partner</div><div class="pc-badge">Partner certificado</div><div class="pc-arrow">Cómo te ayudamos →</div>
         </button>
-        <button class="pc pc-cato pc--wide" data-partner="cato" aria-label="Ver soluciones Cato Networks con Argensys">
-          <div class="pc-top"></div>
-          <div class="pc-logo"><span class="pc-wordmark" style="color:#158864">Cato<small>Networks</small></span></div>
-          <div class="pc-wide-mid">
-            <div class="pc-cert">SASE Partner</div>
-            <div class="pc-badge">Partner certificado</div>
-          </div>
+        <button class="pc pc-cato pc--wide" data-partner="cato" aria-label="Ver soluciones Cato Networks">
+          <div class="pc-top"></div><div class="pc-logo"><span class="pc-wordmark" style="color:#158864">Cato<small>Networks</small></span></div>
+          <div class="pc-wide-mid"><div class="pc-cert">SASE Partner</div><div class="pc-badge">Partner certificado</div></div>
           <div class="pc-arrow">Cómo te ayudamos →</div>
         </button>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- TICKER -->
-<div class="ticker" role="marquee">
+<div class="ticker">
   <div class="ticker-track">
     <span class="ticker-item"><b>+68%</b> de ataques ransomware en LATAM en 2024 <span class="ticker-sep">·</span></span>
     <span class="ticker-item"><b>1 de cada 3</b> pymes argentinas sufrió un incidente el último año <span class="ticker-sep">·</span></span>
@@ -983,28 +202,29 @@ button.pc:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 </div>
 
 <!-- STATS -->
-<div class="stats-banner sec--white">
+<div class="stat-band sec--white"><div class="w"><div class="sb-inner">
+  <div class="sb-cell rv"><div class="sb-n" data-count="20" data-prefix="+">+20</div><div class="sb-l">Años protegiendo empresas en Argentina</div></div>
+  <div class="sb-cell rv d1"><div class="sb-n">24/7</div><div class="sb-l">Soporte garantizado los 365 días del año</div></div>
+  <div class="sb-cell rv d2"><div class="sb-n" data-count="4">4</div><div class="sb-l">Certificaciones oficiales de fabricantes globales</div></div>
+  <div class="sb-cell rv d3"><div class="sb-n">100%</div><div class="sb-l">Soluciones personalizadas a cada empresa</div></div>
+</div></div></div>
+
+<!-- SERVICES PREVIEW -->
+<section class="sec sec--white" id="servicios">
   <div class="w">
-    <div class="sb-inner">
-      <div class="sb-cell rv">
-        <div class="sb-n" data-count="20" data-prefix="+">+20</div>
-        <div class="sb-l">Años protegiendo empresas en Argentina</div>
-      </div>
-      <div class="sb-cell rv d1">
-        <div class="sb-n">24/7</div>
-        <div class="sb-l">Soporte garantizado los 365 días del año</div>
-      </div>
-      <div class="sb-cell rv d2">
-        <div class="sb-n" data-count="4">4</div>
-        <div class="sb-l">Certificaciones oficiales de fabricantes globales</div>
-      </div>
-      <div class="sb-cell rv d3">
-        <div class="sb-n">100%</div>
-        <div class="sb-l">Soluciones personalizadas a cada empresa</div>
-      </div>
+    <div class="sec-head center">
+      <div class="lbl rv">Qué hacemos</div>
+      <h2 class="dsp rv d1">Todo tu IT, <em>en un solo equipo.</em></h2>
+      <p class="body rv d2">Cuatro áreas que trabajan juntas para que tu empresa funcione segura, rápida y sin sorpresas.</p>
+    </div>
+    <div class="fgrid cols-4">
+      <a href="infraestructura/" class="fcard rv"><div class="fcard-ico">🖥️</div><h3>Infraestructura IT</h3><p>Servidores, redes, almacenamiento y migraciones cloud sobre hardware Lenovo certificado.</p><span class="fcard-link">Ver más →</span></a>
+      <a href="soporte/" class="fcard rv d1"><div class="fcard-ico">🛟</div><h3>Soporte & Help Desk</h3><p>Asistencia técnica remota y presencial todo el año, con SLA garantizado por contrato.</p><span class="fcard-link">Ver más →</span></a>
+      <a href="ciberseguridad/" class="fcard rv d2"><div class="fcard-ico">🛡️</div><h3>Ciberseguridad</h3><p>Firewall Fortinet, EDR, anti-ransomware, SOC gestionado y auditorías de vulnerabilidades.</p><span class="fcard-link">Ver más →</span></a>
+      <a href="bitrix24/" class="fcard rv d3"><div class="fcard-ico">⚡</div><h3>Bitrix24 & CRM</h3><p>Implementamos CRM, gestión de proyectos y automatización para ordenar tu operación.</p><span class="fcard-link">Ver más →</span></a>
     </div>
   </div>
-</div>
+</section>
 
 <!-- CHECKLIST -->
 <section class="sec sec--tint" aria-labelledby="check-title">
@@ -1012,219 +232,72 @@ button.pc:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
     <div class="check-layout">
       <div class="check-left rv-l">
         <div class="lbl">La pregunta clave</div>
-        <h2 class="check-eyebrow" id="check-title">
-          ¿Tu empresa puede<br>responder <em>sí</em> a<br>todo esto?
-        </h2>
+        <h2 class="check-eyebrow" id="check-title">¿Tu empresa puede<br>responder <em>sí</em> a<br>todo esto?</h2>
         <p class="check-note">Hacé click en cada punto. Si no podés marcar todos como "sí", es hora de hablar con nosotros — sin compromiso.</p>
-        <a href="#contacto" class="btn solid" style="width:fit-content">Hablar con el equipo →</a>
+        <a href="contacto/" class="btn solid" style="width:fit-content">Hablar con el equipo →</a>
       </div>
       <div class="rv-r d1">
         <ul class="check-list" id="checkList">
-          <li class="check-item" tabindex="0" role="checkbox" aria-checked="false">
-            <div class="check-box">✓</div>
-            <span class="check-text">Sabés exactamente quién tiene acceso a qué en tu red y podés revocar ese acceso en minutos.</span>
-          </li>
-          <li class="check-item" tabindex="0" role="checkbox" aria-checked="false">
-            <div class="check-box">✓</div>
-            <span class="check-text">Si te hackean hoy, podés recuperar todos tus datos críticos en menos de 4 horas.</span>
-          </li>
-          <li class="check-item" tabindex="0" role="checkbox" aria-checked="false">
-            <div class="check-box">✓</div>
-            <span class="check-text">Tus empleados saben reconocer un email de phishing y qué hacer si reciben uno.</span>
-          </li>
-          <li class="check-item" tabindex="0" role="checkbox" aria-checked="false">
-            <div class="check-box">✓</div>
-            <span class="check-text">Tenés monitoreo activo de tu infraestructura las 24 horas, no solo en horario laboral.</span>
-          </li>
-          <li class="check-item" tabindex="0" role="checkbox" aria-checked="false">
-            <div class="check-box">✓</div>
-            <span class="check-text">Tu firewall está actualizado, correctamente configurado y gestionado por alguien certificado.</span>
-          </li>
+          <li class="check-item" tabindex="0" role="checkbox" aria-checked="false"><div class="check-box">✓</div><span class="check-text">Sabés exactamente quién tiene acceso a qué en tu red y podés revocar ese acceso en minutos.</span></li>
+          <li class="check-item" tabindex="0" role="checkbox" aria-checked="false"><div class="check-box">✓</div><span class="check-text">Si te hackean hoy, podés recuperar todos tus datos críticos en menos de 4 horas.</span></li>
+          <li class="check-item" tabindex="0" role="checkbox" aria-checked="false"><div class="check-box">✓</div><span class="check-text">Tus empleados saben reconocer un email de phishing y qué hacer si reciben uno.</span></li>
+          <li class="check-item" tabindex="0" role="checkbox" aria-checked="false"><div class="check-box">✓</div><span class="check-text">Tenés monitoreo activo de tu infraestructura las 24 horas, no solo en horario laboral.</span></li>
+          <li class="check-item" tabindex="0" role="checkbox" aria-checked="false"><div class="check-box">✓</div><span class="check-text">Tu firewall está actualizado, configurado y gestionado por alguien certificado.</span></li>
         </ul>
-        <div class="check-result" id="checkResult">
-          Marcá cada punto que tu empresa ya tiene cubierto. <strong id="checkScore" style="color:var(--blue)">0/5</strong> cubiertos.
-        </div>
+        <div class="check-result" id="checkResult">Marcá cada punto que tu empresa ya tiene cubierto. <strong id="checkScore" style="color:var(--blue)">0/5</strong> cubiertos.</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="sec sec--white" id="servicios" aria-labelledby="svc-title">
-  <div class="w">
-    <div class="svc-header">
-      <div>
-        <div class="lbl rv">Nuestros servicios</div>
-        <h2 class="dsp rv d1" id="svc-title">Protección completa,<br>de punta a <em>punta.</em></h2>
-      </div>
-      <p class="body rv d2">Cada servicio se puede contratar de forma independiente o como parte de un esquema integral. Vos decidís según tus necesidades.</p>
-    </div>
-    <div class="svc-list" role="list">
-
-      <div class="svc-row rv" role="listitem">
-        <button class="svc-btn" aria-expanded="false">
-          <span class="svc-num">01</span>
-          <span class="svc-name">Firewall y Seguridad de Red<span class="svc-sub">Fortinet NGFW · VPN · Segmentación</span></span>
-          <span class="svc-arr">+</span>
-        </button>
-        <div class="svc-body"><div class="svc-inner"><div class="svc-content">
-          <p class="svc-desc">Implementamos y gestionamos firewalls Fortinet de nivel corporativo que inspeccionan todo el tráfico de tu red en tiempo real. Bloqueamos amenazas antes de que entren, sin impacto en el rendimiento.</p>
-          <div class="svc-tags"><span class="svc-tag">Next-Gen Firewall</span><span class="svc-tag">Inspección SSL/TLS</span><span class="svc-tag">VPN empresarial</span><span class="svc-tag">Segmentación de red</span></div>
-        </div></div></div>
-      </div>
-
-      <div class="svc-row rv d1" role="listitem">
-        <button class="svc-btn" aria-expanded="false">
-          <span class="svc-num">02</span>
-          <span class="svc-name">Protección contra Ransomware<span class="svc-sub">Análisis de comportamiento · Sandboxing · Backup</span></span>
-          <span class="svc-arr">+</span>
-        </button>
-        <div class="svc-body"><div class="svc-inner"><div class="svc-content">
-          <p class="svc-desc">Detectamos y bloqueamos ransomware antes de que cifre un solo archivo. Análisis de comportamiento en tiempo real, sandboxing y backup verificado para recuperación garantizada.</p>
-          <div class="svc-tags"><span class="svc-tag">Análisis de comportamiento</span><span class="svc-tag">Sandboxing</span><span class="svc-tag">Backup verificado</span><span class="svc-tag">Plan de recuperación</span></div>
-        </div></div></div>
-      </div>
-
-      <div class="svc-row rv d2" role="listitem">
-        <button class="svc-btn" aria-expanded="false">
-          <span class="svc-num">03</span>
-          <span class="svc-name">EDR — Endpoints<span class="svc-sub">PCs · Laptops · Servidores · Respuesta inmediata</span></span>
-          <span class="svc-arr">+</span>
-        </button>
-        <div class="svc-body"><div class="svc-inner"><div class="svc-content">
-          <p class="svc-desc">Monitoreo continuo de cada dispositivo de tu empresa. Detectamos y respondemos en minutos ante cualquier comportamiento sospechoso — una conexión inesperada, un proceso anómalo.</p>
-          <div class="svc-tags"><span class="svc-tag">Visibilidad total</span><span class="svc-tag">Respuesta automática</span><span class="svc-tag">Análisis forense</span><span class="svc-tag">Threat hunting</span></div>
-        </div></div></div>
-      </div>
-
-      <div class="svc-row rv d3" role="listitem">
-        <button class="svc-btn" aria-expanded="false">
-          <span class="svc-num">04</span>
-          <span class="svc-name">Gestión de Vulnerabilidades<span class="svc-sub">Escaneo · Pentesting · Remediación</span></span>
-          <span class="svc-arr">+</span>
-        </button>
-        <div class="svc-body"><div class="svc-inner"><div class="svc-content">
-          <p class="svc-desc">Buscamos las grietas de tu infraestructura antes de que lo haga alguien con malas intenciones. Escaneamos, identificamos y priorizamos con un plan de remediación claro.</p>
-          <div class="svc-tags"><span class="svc-tag">Escaneo de red</span><span class="svc-tag">Pentesting básico</span><span class="svc-tag">Informe de riesgo</span><span class="svc-tag">Gestión de parches</span></div>
-        </div></div></div>
-      </div>
-
-      <div class="svc-row rv d4" role="listitem">
-        <button class="svc-btn" aria-expanded="false">
-          <span class="svc-num">05</span>
-          <span class="svc-name">Seguridad Cloud<span class="svc-sub">Azure · AWS · GCP · Configuración segura</span></span>
-          <span class="svc-arr">+</span>
-        </button>
-        <div class="svc-body"><div class="svc-inner"><div class="svc-content">
-          <p class="svc-desc">Migrar a la nube no significa estar seguro. Auditamos y protegemos tus entornos cloud con políticas de acceso, encriptación y monitoreo constante de configuraciones inseguras.</p>
-          <div class="svc-tags"><span class="svc-tag">CSPM</span><span class="svc-tag">Control IAM</span><span class="svc-tag">Encriptación</span><span class="svc-tag">Auditoría cloud</span></div>
-        </div></div></div>
-      </div>
-
-      <div class="svc-row rv d5" role="listitem">
-        <button class="svc-btn" aria-expanded="false">
-          <span class="svc-num">06</span>
-          <span class="svc-name">Soporte IT 24/7<span class="svc-sub">Help desk · Remoto y presencial · SLA garantizado</span></span>
-          <span class="svc-arr">+</span>
-        </button>
-        <div class="svc-body"><div class="svc-inner"><div class="svc-content">
-          <p class="svc-desc">Los incidentes no tienen horario. Nosotros tampoco. Equipo técnico certificado disponible las 24 horas para mantener tu empresa operativa sin interrupciones.</p>
-          <div class="svc-tags"><span class="svc-tag">24/7/365</span><span class="svc-tag">Soporte remoto</span><span class="svc-tag">Visitas presenciales</span><span class="svc-tag">SLA por contrato</span></div>
-        </div></div></div>
-      </div>
-
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="sec sec--tint" id="proceso" aria-labelledby="proc-title">
+<section class="sec sec--white" id="proceso">
   <div class="w">
-    <div class="lbl rv">Cómo trabajamos</div>
-    <h2 class="dsp rv d1" id="proc-title" style="max-width:540px">Del primer contacto a la <em>tranquilidad total.</em></h2>
-    <div class="process-grid rv-s d2">
-      <div class="ps">
-        <div class="ps-num">01</div>
-        <div class="ps-t">Diagnóstico sin costo</div>
-        <p class="ps-d">Evaluamos tu seguridad actual y entregamos un informe claro en menos de 48 horas. Sin compromiso.</p>
-      </div>
-      <div class="ps">
-        <div class="ps-num">02</div>
-        <div class="ps-t">Plan a tu medida</div>
-        <p class="ps-d">Diseñamos una hoja de ruta que prioriza lo más crítico y se ajusta a tu presupuesto real.</p>
-      </div>
-      <div class="ps">
-        <div class="ps-num">03</div>
-        <div class="ps-t">Implementación limpia</div>
-        <p class="ps-d">Desplegamos las soluciones sin interrumpir tu operación. Sin downtime innecesario.</p>
-      </div>
-      <div class="ps">
-        <div class="ps-num">04</div>
-        <div class="ps-t">Monitoreo continuo</div>
-        <p class="ps-d">Vigilancia 24/7 con reportes mensuales. No desaparecemos después de implementar.</p>
-      </div>
+    <div class="sec-head"><div class="lbl rv">Cómo trabajamos</div><h2 class="dsp rv d1" style="max-width:540px">Del primer contacto a la <em>tranquilidad total.</em></h2></div>
+    <div class="steps rv-s d2">
+      <div class="step"><div class="step-num">01</div><div class="step-t">Diagnóstico sin costo</div><p class="step-d">Evaluamos tu seguridad e infraestructura actual y entregamos un informe claro en menos de 48 horas.</p></div>
+      <div class="step"><div class="step-num">02</div><div class="step-t">Plan a tu medida</div><p class="step-d">Diseñamos una hoja de ruta que prioriza lo más crítico y se ajusta a tu presupuesto real.</p></div>
+      <div class="step"><div class="step-num">03</div><div class="step-t">Implementación limpia</div><p class="step-d">Desplegamos las soluciones sin interrumpir tu operación. Sin downtime innecesario.</p></div>
+      <div class="step"><div class="step-num">04</div><div class="step-t">Monitoreo continuo</div><p class="step-d">Vigilancia 24/7 con reportes mensuales. No desaparecemos después de implementar.</p></div>
     </div>
   </div>
 </section>
 
 <!-- CLIENTS -->
-<section class="sec sec--white" id="clientes" aria-labelledby="cli-title">
+<section class="sec sec--tint" id="clientes">
   <div class="w">
-    <div class="lbl rv">Empresas que confían en nosotros</div>
-    <h2 class="dsp rv d1" id="cli-title">Protegemos negocios<br>de todos los <em>sectores.</em></h2>
-    <p class="body rv d2">Desde estudios contables hasta empresas industriales. Cada cliente tiene necesidades distintas — y las resolvemos de forma distinta.</p>
-    <div class="clients-grid rv-s d2" role="list">
-      <div class="cl" role="listitem">ALS</div>
-      <div class="cl" role="listitem">Conexión Salud</div>
-      <div class="cl" role="listitem">Corplab</div>
-      <div class="cl" role="listitem">Intergeo</div>
-      <div class="cl" role="listitem">Mayer</div>
-      <div class="cl" role="listitem">Wassertek</div>
-      <div class="cl" role="listitem">Worklift</div>
-      <div class="cl" role="listitem">FDI Gerenciadora</div>
-      <div class="cl" role="listitem">Stoncor South Cone</div>
+    <div class="sec-head"><div class="lbl rv">Empresas que confían en nosotros</div><h2 class="dsp rv d1">Protegemos negocios<br>de todos los <em>sectores.</em></h2><p class="body rv d2">Desde estudios contables hasta empresas industriales. Cada cliente tiene necesidades distintas — y las resolvemos de forma distinta.</p></div>
+    <div class="clients-grid rv-s d2">
+      <div class="cl">ALS</div><div class="cl">Conexión Salud</div><div class="cl">Corplab</div>
+      <div class="cl">Intergeo</div><div class="cl">Mayer</div><div class="cl">Wassertek</div>
+      <div class="cl">Worklift</div><div class="cl">FDI Gerenciadora</div><div class="cl">Stoncor South Cone</div>
     </div>
-    <div class="testi rv-s d3">
+    <div class="testi rv-s d3" style="margin-top:40px">
       <blockquote>
         <p class="testi-q">"El nivel de respuesta y profesionalismo resolvió en horas lo que otros no pudieron en días. Desde que trabajamos con Argensys dormimos tranquilos sabiendo que nuestra infraestructura está protegida."</p>
-        <div class="testi-author">
-          <div class="testi-av" aria-hidden="true">D</div>
-          <div>
-            <div class="testi-name">Director de Operaciones</div>
-            <div class="testi-role">Cliente Argensys · Sector Salud</div>
-          </div>
-        </div>
+        <div class="testi-author"><div class="testi-av" aria-hidden="true">D</div><div><div class="testi-name">Director de Operaciones</div><div class="testi-role">Cliente Argensys · Sector Salud</div></div></div>
       </blockquote>
     </div>
   </div>
 </section>
 
-<!-- CTA — dark navy -->
-<section class="sec sec--blue" id="contacto" aria-labelledby="cta-title">
+<!-- CTA -->
+<section class="sec sec--blue" id="contacto">
   <div class="w">
     <div class="cta-layout">
       <div>
         <div class="lbl inv rv">Hablemos</div>
-        <h2 class="dsp inv rv d1" id="cta-title">Empezá con un<br>diagnóstico <em>gratuito.</em></h2>
+        <h2 class="dsp inv rv d1">Empezá con un<br>diagnóstico <em>gratuito.</em></h2>
         <p class="body inv rv d2">En menos de 48 horas sabés exactamente cuál es tu exposición y qué podés hacer para mejorarla. Sin compromiso, sin letra chica.</p>
-        <div class="cta-contacts rv-l d3">
-          <a href="https://wa.me/5491157317988?text=Hola%2C%20quiero%20info%20sobre%20ciberseguridad" class="cta-ct" target="_blank" rel="noopener noreferrer">
-            <div class="cta-ct-ico">💬</div>
-            <div><div class="cta-ct-l">WhatsApp</div><div class="cta-ct-v">+54 9 11 5731-7988</div></div>
-          </a>
-          <a href="mailto:info@argensys.com.ar" class="cta-ct">
-            <div class="cta-ct-ico">✉️</div>
-            <div><div class="cta-ct-l">Email</div><div class="cta-ct-v">info@argensys.com.ar</div></div>
-          </a>
-          <div class="cta-ct">
-            <div class="cta-ct-ico">📍</div>
-            <div><div class="cta-ct-l">Cobertura</div><div class="cta-ct-v">Buenos Aires y todo el país</div></div>
-          </div>
+        <div class="ct-list rv d3" style="margin-top:28px">
+          <a href="https://wa.me/5491157317988?text=Hola%2C%20quiero%20info" class="ct inv" target="_blank" rel="noopener noreferrer"><div class="ct-ico">💬</div><div><div class="ct-l">WhatsApp</div><div class="ct-v">+54 9 11 5731-7988</div></div></a>
+          <a href="mailto:info@argensys.com.ar" class="ct inv"><div class="ct-ico">✉️</div><div><div class="ct-l">Email</div><div class="ct-v">info@argensys.com.ar</div></div></a>
+          <div class="ct inv"><div class="ct-ico">📍</div><div><div class="ct-l">Cobertura</div><div class="ct-v">Buenos Aires y todo el país</div></div></div>
         </div>
       </div>
-      <div class="form-card rv-r d2">
+      <div class="form-card on-dark rv-r d2">
         <h3 class="form-title">Solicitá tu diagnóstico</h3>
-        <form id="contactForm">
+        <form data-lead>
           <div class="fr">
             <div class="fg"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" placeholder="Juan García" required autocomplete="given-name"/></div>
             <div class="fg"><label for="empresa">Empresa *</label><input type="text" id="empresa" name="empresa" placeholder="Mi Empresa S.A." required autocomplete="organization"/></div>
@@ -1233,20 +306,8 @@ button.pc:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
             <div class="fg"><label for="email">Email *</label><input type="email" id="email" name="email" placeholder="juan@empresa.com" required autocomplete="email"/></div>
             <div class="fg"><label for="tel">Teléfono</label><input type="tel" id="tel" name="tel" placeholder="+54 11 XXXX-XXXX"/></div>
           </div>
-          <div class="fg">
-            <label for="size">Tamaño de la empresa</label>
-            <select id="size" name="size">
-              <option value="">Seleccioná</option>
-              <option>1–10 empleados</option>
-              <option>11–50 empleados</option>
-              <option>51–200 empleados</option>
-              <option>Más de 200 empleados</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label for="msg">¿Cuál es tu mayor preocupación de seguridad?</label>
-            <textarea id="msg" name="msg" placeholder="Ej: No sé si nuestros datos están seguros ante un ataque…"></textarea>
-          </div>
+          <div class="fg"><label for="size">Tamaño de la empresa</label><select id="size" name="size"><option value="">Seleccioná</option><option>1–10 empleados</option><option>11–50 empleados</option><option>51–200 empleados</option><option>Más de 200 empleados</option></select></div>
+          <div class="fg"><label for="msg">¿Cuál es tu mayor necesidad?</label><textarea id="msg" name="msg" placeholder="Ej: No sé si nuestros datos están seguros ante un ataque…"></textarea></div>
           <button type="submit" class="fsub">Solicitar diagnóstico gratuito →</button>
         </form>
       </div>
@@ -1261,247 +322,39 @@ button.pc:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
   <div class="w">
     <div class="foot-g">
       <div>
-        <div class="foot-logo">
-          <img src="Logo/Logo argensys.png" class="lmark lmark-dark" width="34" height="34" alt="Argensys">
-          <span class="foot-logo-name">Argensys</span>
-        </div>
+        <div class="foot-logo"><img src="logos/argensys.png" class="lmark lmark-dark" width="34" height="34" alt="Argensys"><span class="foot-logo-name">Argensys</span></div>
         <p class="foot-tag">Ciberseguridad y servicios IT para pymes y empresas en Argentina. Más de 20 años protegiendo negocios.</p>
         <nav class="fsoc" aria-label="Redes sociales">
           <a href="https://www.linkedin.com/company/argensys" class="fsoc-l" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
           <a href="https://www.facebook.com/argensys" class="fsoc-l" aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
-          <a href="https://twitter.com/argensysok" class="fsoc-l" aria-label="Twitter" target="_blank" rel="noopener noreferrer">𝕏</a>
           <a href="https://www.instagram.com/argensys" class="fsoc-l" aria-label="Instagram" target="_blank" rel="noopener noreferrer">ig</a>
         </nav>
       </div>
-      <div><h4 class="fc-t">Servicios</h4><nav class="flinks"><a href="#servicios">Firewall y Redes</a><a href="#servicios">Anti-Ransomware</a><a href="#servicios">EDR Endpoints</a><a href="#servicios">Vulnerabilidades</a><a href="#servicios">Seguridad Cloud</a><a href="#servicios">Soporte 24/7</a></nav></div>
-      <div><h4 class="fc-t">Empresa</h4><nav class="flinks"><a href="#clientes">Clientes</a><a href="#proceso">Cómo trabajamos</a><a href="#contacto">Contacto</a></nav></div>
-      <div><h4 class="fc-t">Contacto</h4><nav class="flinks"><a href="mailto:info@argensys.com.ar">info@argensys.com.ar</a><a href="https://wa.me/5491157317988">+54 9 11 5731-7988</a><span>Buenos Aires, Argentina</span></nav></div>
+      <div><h4 class="fc-t">Servicios</h4><nav class="flinks"><a href="infraestructura/">Infraestructura IT</a><a href="soporte/">Soporte & Help Desk</a><a href="ciberseguridad/">Ciberseguridad</a><a href="bitrix24/">Bitrix24 & CRM</a><a href="sentinel/">Sentinel</a></nav></div>
+      <div><h4 class="fc-t">Empresa</h4><nav class="flinks"><a href="nosotros/">Nosotros</a><a href="partners/">Partners</a><a href="blog/">Blog</a><a href="contacto/">Contacto</a></nav></div>
+      <div><h4 class="fc-t">Contacto</h4><nav class="flinks"><a href="mailto:info@argensys.com.ar">info@argensys.com.ar</a><a href="https://wa.me/5491157317988">+54 9 11 5731-7988</a><span>Buenos Aires, Argentina</span><span>Lun a Vie · 9 a 18 h</span></nav></div>
     </div>
     <div class="foot-bot">
-      <p class="foot-copy">© 2025 Argensys IT Services S.R.L. Todos los derechos reservados.</p>
+      <p class="foot-copy">© 2026 Argensys IT Services S.R.L. Todos los derechos reservados.</p>
       <div class="foot-certs"><span class="cert">Fortinet ADV</span><span class="cert">IBM Partner</span><span class="cert">Lenovo Auth.</span><span class="cert">Bitrix24 Silver</span><span class="cert">Cato SASE</span></div>
     </div>
   </div>
 </footer>
+
+<a href="https://wa.me/5491157317988?text=Hola%2C%20quiero%20info%20sobre%20sus%20servicios" class="wa" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <!-- PARTNER MODAL -->
 <div class="pm-overlay" id="pmOverlay" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
   <div class="pm-card" id="pmCard">
     <button class="pm-close" id="pmClose" aria-label="Cerrar">✕</button>
     <div class="pm-top-bar" id="pmBar"></div>
-    <div class="pm-head">
-      <div class="pm-ico" id="pmIco"></div>
-      <div>
-        <div class="pm-brand-name" id="pmTitle"></div>
-        <div class="pm-brand-cert" id="pmCert"></div>
-      </div>
-    </div>
+    <div class="pm-head"><div class="pm-ico" id="pmIco"></div><div><div class="pm-brand-name" id="pmTitle"></div><div class="pm-brand-cert" id="pmCert"></div></div></div>
     <div class="pm-body" id="pmBody"></div>
   </div>
 </div>
 
-<a href="https://wa.me/5491157317988?text=Hola%2C%20quiero%20info%20sobre%20ciberseguridad%20para%20mi%20empresa" class="wa" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<script>
-/* CINEMATIC INTRO */
-(()=>{
-  const mid=document.getElementById('introMid');
-  const curtains=document.querySelectorAll('.intro-c');
-  const intro=document.getElementById('intro');
-  setTimeout(()=>{
-    mid.classList.add('out');
-    setTimeout(()=>{
-      curtains.forEach(c=>c.classList.add('out'));
-      setTimeout(()=>intro.remove(),1150);
-    },420);
-  },1750);
-})();
-
-/* SCROLL PROGRESS */
-const sbar=document.getElementById('scrollBar');
-window.addEventListener('scroll',()=>{
-  sbar.style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+'%';
-},{passive:true});
-
-/* SECTION DOTS */
-const secIds=['inicio','servicios','proceso','clientes','contacto'];
-const secDots=document.querySelectorAll('.sec-dot');
-const secObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      const i=secIds.indexOf(e.target.id);
-      if(i>=0)secDots.forEach((d,j)=>d.classList.toggle('on',i===j));
-    }
-  });
-},{threshold:.35});
-secIds.forEach(id=>{const el=document.getElementById(id);if(el)secObs.observe(el)});
-
-/* NAV */
-const nav=document.getElementById('nav');
-const heroBlob=document.querySelector('.hero-blob');
-const heroDots=document.querySelector('.hero-dots');
-window.addEventListener('scroll',()=>{
-  nav.classList.toggle('on',scrollY>40);
-  if(scrollY<innerHeight){
-    heroBlob.style.transform=`translateY(${scrollY*.28}px)`;
-    heroDots.style.transform=`translateY(${scrollY*.14}px)`;
-  }
-},{passive:true});
-
-/* MOBILE */
-const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
-document.getElementById('drawerX').addEventListener('click',closeDrawer);
-burger.addEventListener('click',()=>{drawer.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'});
-function closeDrawer(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
-drawer.querySelectorAll('.dl').forEach(l=>l.addEventListener('click',closeDrawer));
-
-/* REVEAL */
-const rio=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rio.unobserve(e.target)}});
-},{threshold:.1,rootMargin:'0px 0px -28px 0px'});
-document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s').forEach(el=>rio.observe(el));
-
-/* COUNTERS */
-function countUp(el){
-  const t=parseInt(el.dataset.count),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
-  const d=1600,s=performance.now();
-  const tick=now=>{
-    const p=Math.min((now-s)/d,1),e=1-Math.pow(1-p,3);
-    el.textContent=pre+Math.floor(e*t)+suf;
-    if(p<1)requestAnimationFrame(tick);else el.textContent=pre+t+suf;
-  };
-  requestAnimationFrame(tick);
-}
-const cio=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting&&e.target.dataset.count){countUp(e.target);cio.unobserve(e.target)}});
-},{threshold:.5});
-document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
-
-/* SERVICES */
-document.querySelectorAll('.svc-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const row=btn.closest('.svc-row'),isOpen=row.classList.contains('open');
-    document.querySelectorAll('.svc-row.open').forEach(r=>{r.classList.remove('open');r.querySelector('.svc-btn').setAttribute('aria-expanded','false')});
-    if(!isOpen){row.classList.add('open');btn.setAttribute('aria-expanded','true')}
-  });
-});
-
-/* CHECKLIST */
-let checked=0;
-const scoreEl=document.getElementById('checkScore');
-const resultEl=document.getElementById('checkResult');
-document.querySelectorAll('.check-item').forEach(item=>{
-  function toggle(){
-    item.classList.toggle('chk');
-    checked=document.querySelectorAll('.check-item.chk').length;
-    item.setAttribute('aria-checked',item.classList.contains('chk'));
-    scoreEl.textContent=checked+'/5';
-    if(checked===0)resultEl.innerHTML='Marcá cada punto que tu empresa ya tiene cubierto. <strong id="checkScore" style="color:var(--blue)">0/5</strong> cubiertos.';
-    else if(checked<3)resultEl.innerHTML=`<strong style="color:var(--blue)">${checked}/5</strong> cubiertos. Hay puntos críticos que necesitan atención urgente. <a href="#contacto">Hablemos →</a>`;
-    else if(checked<5)resultEl.innerHTML=`<strong style="color:var(--blue)">${checked}/5</strong> cubiertos. Bien encaminado, pero los puntos faltantes pueden ser tu mayor vulnerabilidad. <a href="#contacto">Cerremos esas brechas →</a>`;
-    else resultEl.innerHTML=`<strong style="color:var(--blue)">5/5 ✓</strong> Excelente base. ¿Querés una auditoría para confirmarlo? <a href="#contacto">Contactanos →</a>`;
-  }
-  item.addEventListener('click',toggle);
-  item.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();toggle()}});
-});
-
-/* PARTNER MODAL */
-const partners={
-  fortinet:{
-    color:'#E8442A',logo:'logos/fortinet.svg',name:'Fortinet',cert:'Advanced Partner',
-    what:'Fortinet es el líder mundial en ciberseguridad de redes. Sus soluciones Next-Generation Firewall protegen millones de empresas en más de 100 países con inspección de tráfico en tiempo real y detección de amenazas basada en inteligencia artificial.',
-    how:'Como Advanced Partner certificado, implementamos y gestionamos el ecosistema Fortinet completo en tu infraestructura: desde el firewall perimetral hasta la protección de endpoints y el análisis centralizado de eventos. Cada instalación es configurada por ingenieros certificados y monitoreada de forma continua.',
-    cases:['Protección del perímetro de red contra ataques externos e internos','Control y cifrado de VPN para equipos que trabajan de forma remota','Inspección de tráfico cifrado HTTPS/SSL sin impacto en el rendimiento','Segmentación de red para aislar áreas críticas del negocio','Filtrado web y control de aplicaciones por usuario o grupo'],
-    products:['FortiGate NGFW','FortiClient VPN','FortiEDR','FortiAnalyzer','FortiSandbox']
-  },
-  ibm:{
-    color:'#1755C4',logo:'logos/ibm.svg',name:'IBM',cert:'Business Partner',
-    what:'IBM es una empresa global con más de 100 años de historia que hoy lidera en inteligencia artificial aplicada a la seguridad, infraestructura empresarial de alto rendimiento y servicios de nube híbrida. Su plataforma QRadar es el estándar de industria para centros de operaciones de seguridad (SOC).',
-    how:'Como IBM Business Partner, integramos las soluciones IBM en tu entorno para centralizar y correlacionar eventos de seguridad de toda tu organización. Detectamos amenazas que los sistemas tradicionales no ven, reduciendo el tiempo de respuesta ante incidentes de días a minutos.',
-    cases:['Centralización y correlación de logs de seguridad en tiempo real','Detección de comportamientos anómalos e insider threats','Cumplimiento normativo y auditoría automatizada','Análisis forense post-incidente con trazabilidad completa','Infraestructura de servidores de alta disponibilidad para entornos críticos'],
-    products:['IBM QRadar SIEM','IBM FlashSystem','IBM Cloud Pak','IBM Security Verify','IBM Cognos']
-  },
-  lenovo:{
-    color:'#E65C00',logo:'logos/lenovo.svg',name:'Lenovo',cert:'Authorized Partner',
-    what:'Lenovo es el fabricante de hardware empresarial más grande del mundo, con líneas ThinkPad, ThinkCentre y ThinkSystem diseñadas para entornos corporativos exigentes. Sus equipos incluyen protecciones de hardware como TPM, encriptación de disco y gestión remota fuera de banda.',
-    how:'Como Authorized Partner, proveemos, configuramos y desplegamos equipamiento Lenovo con las políticas de seguridad correctas desde el primer día. No entregamos un equipo genérico: cada dispositivo sale configurado con encriptación activa, gestión centralizada y acceso remoto seguro para soporte.',
-    cases:['Renovación de parque de PCs y laptops con configuración segura de fábrica','Servidores ThinkSystem para virtualización y almacenamiento crítico','Dispositivos configurados para trabajo remoto seguro con VPN integrada','Estaciones de trabajo ThinkStation para entornos de alto rendimiento','Gestión centralizada de activos de hardware con inventario automático'],
-    products:['ThinkPad','ThinkCentre','ThinkSystem','ThinkStation','ThinkBook']
-  },
-  bitrix:{
-    color:'#0099B5',logoTxt:'Bitrix24',logoColor:'#2C9FD4',name:'Bitrix24',cert:'Silver Partner',
-    what:'Bitrix24 es la plataforma all-in-one para empresas que centraliza CRM, comunicación interna, gestión de proyectos, automatización de procesos y videollamadas. Con más de 15 millones de empresas usuarias en el mundo, elimina la necesidad de múltiples herramientas dispersas.',
-    how:'Como Silver Partner certificado, implementamos y personalizamos Bitrix24 para que tu empresa trabaje de forma más organizada, segura y conectada. Migramos tus datos, entrenamos a tu equipo y configuramos los flujos de trabajo adaptados a tu operación real.',
-    cases:['CRM para gestión integral de clientes, leads y oportunidades de venta','Comunicación interna unificada: chat, videollamadas y tareas en un solo lugar','Automatización de procesos comerciales y aprobaciones','Gestión de proyectos con asignación de tareas y seguimiento en tiempo real','Portal del empleado e intranet para empresas con equipos distribuidos'],
-    products:['CRM & Pipeline','Intranet & Portal','Gestión de Proyectos','Automatización','Video HD']
-  },
-  cato:{
-    color:'#158864',logoTxt:'Cato',logoColor:'#158864',name:'Cato Networks',cert:'SASE Partner',
-    what:'Cato Networks es el pionero global de SASE (Secure Access Service Edge): una plataforma cloud-native que unifica red y seguridad en un único servicio. Conecta de forma segura todas tus sedes, usuarios remotos y aplicaciones en la nube a través de una red privada global, sin appliances complejos.',
-    how:'Como partner de Cato, reemplazamos tu mix de VPNs, firewalls y enlaces MPLS por una sola plataforma gestionada. Conectamos tus oficinas y empleados remotos a la red global de Cato, con seguridad de nivel empresarial aplicada de forma uniforme en todos lados — y la administramos por vos.',
-    cases:['Conexión segura de sucursales y empleados remotos sin VPNs tradicionales','Reemplazo de enlaces MPLS costosos por SD-WAN cloud-native','Seguridad uniforme (FWaaS, IPS, anti-malware) para todo el tráfico','Acceso Zero Trust (ZTNA) a aplicaciones internas y en la nube','Optimización y monitoreo del rendimiento de red en tiempo real'],
-    products:['SASE Cloud','SD-WAN','FWaaS','ZTNA','SSE 360']
-  }
-};
-const overlay=document.getElementById('pmOverlay'),pmCard=document.getElementById('pmCard');
-const pmBar=document.getElementById('pmBar'),pmIco=document.getElementById('pmIco');
-const pmTitle=document.getElementById('pmTitle'),pmCert=document.getElementById('pmCert');
-const pmBody=document.getElementById('pmBody');
-function openPartner(key){
-  const p=partners[key];if(!p)return;
-  pmBar.style.background=p.color;
-  if(p.logo)pmIco.innerHTML=`<img src="${p.logo}" alt="${p.name}" style="max-width:40px;max-height:40px;object-fit:contain">`;
-  else pmIco.innerHTML=`<span style="font-weight:800;font-size:1.05rem;letter-spacing:-.02em;color:${p.logoColor||p.color}">${p.logoTxt||p.name}</span>`;
-  pmTitle.textContent=p.name;
-  pmCert.textContent=p.cert;pmCert.style.color=p.color;
-  pmBody.innerHTML=`
-    <div>
-      <div class="pm-section-title">Quiénes son</div>
-      <p class="pm-text">${p.what}</p>
-    </div>
-    <div>
-      <div class="pm-section-title">Cómo Argensys lo aplica a tu empresa</div>
-      <p class="pm-text">${p.how}</p>
-    </div>
-    <div>
-      <div class="pm-section-title">Casos de uso en tu negocio</div>
-      <div class="pm-cases">${p.cases.map(c=>`<div class="pm-case" style="--dot:${p.color}">${c}</div>`).join('')}</div>
-    </div>
-    <div>
-      <div class="pm-section-title">Soluciones disponibles</div>
-      <div class="pm-chips">${p.products.map(pr=>`<span class="pm-chip" style="color:${p.color};background:${p.color}12;border-color:${p.color}28">${pr}</span>`).join('')}</div>
-    </div>
-    <a href="#contacto" class="pm-cta" style="background:linear-gradient(135deg,${p.color},${p.color}cc)" onclick="closePartner()">Consultanos sobre ${p.name} →</a>
-  `;
-  overlay.classList.add('open');
-  document.body.style.overflow='hidden';
-  pmCard.focus();
-}
-function closePartner(){overlay.classList.remove('open');document.body.style.overflow=''}
-document.getElementById('pmClose').addEventListener('click',closePartner);
-overlay.addEventListener('click',e=>{if(e.target===overlay)closePartner()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closePartner()});
-document.querySelectorAll('[data-partner]').forEach(btn=>{
-  btn.addEventListener('click',()=>openPartner(btn.dataset.partner));
-});
-
-/* SMOOTH SCROLL */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-76,behavior:'smooth'})}
-  });
-});
-
-/* FORM */
-document.getElementById('contactForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  const b=this.querySelector('.fsub');
-  b.textContent='Enviando…';b.disabled=true;
-  setTimeout(()=>{b.textContent='✓ ¡Listo! Te contactamos en las próximas horas.';b.style.background='#059669';},900);
-});
-</script>
+<script src="assets/app.js"></script>
 </body>
 </html>
