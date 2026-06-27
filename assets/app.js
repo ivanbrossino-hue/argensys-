@@ -141,7 +141,7 @@ if(overlay){
       '<div><div class="pm-section-title">Cómo Argensys lo aplica a tu empresa</div><p class="pm-text">'+p.how+'</p></div>'+
       '<div><div class="pm-section-title">Casos de uso en tu negocio</div><div class="pm-cases">'+p.cases.map(c=>'<div class="pm-case" style="--dot:'+p.color+'">'+c+'</div>').join('')+'</div></div>'+
       '<div><div class="pm-section-title">Soluciones disponibles</div><div class="pm-chips">'+p.products.map(pr=>'<span class="pm-chip" style="color:'+p.color+';background:'+p.color+'12;border-color:'+p.color+'28">'+pr+'</span>').join('')+'</div></div>'+
-      '<a href="'+B+'contacto/" class="pm-cta" style="background:linear-gradient(135deg,'+p.color+','+p.color+'cc)">Consultanos sobre '+p.name+' →</a>';
+      '<a href="'+B+'contacto/index.html" class="pm-cta" style="background:linear-gradient(135deg,'+p.color+','+p.color+'cc)">Consultanos sobre '+p.name+' →</a>';
     overlay.classList.add('open');document.body.style.overflow='hidden';pmCard.focus();
   }
   window.openPartner=open;
@@ -185,9 +185,9 @@ if(checkList){
   function refresh(){
     const n=checkList.querySelectorAll('.check-item.chk').length;
     if(n===0)resultEl.innerHTML='Marcá cada punto que tu empresa ya tiene cubierto. <strong id="checkScore" style="color:var(--blue)">0/5</strong> cubiertos.';
-    else if(n<3)resultEl.innerHTML='<strong style="color:var(--blue)">'+n+'/5</strong> cubiertos. Hay puntos críticos que necesitan atención urgente. <a href="'+B+'contacto/">Hablemos →</a>';
-    else if(n<5)resultEl.innerHTML='<strong style="color:var(--blue)">'+n+'/5</strong> cubiertos. Bien encaminado, pero los puntos faltantes pueden ser tu mayor vulnerabilidad. <a href="'+B+'contacto/">Cerremos esas brechas →</a>';
-    else resultEl.innerHTML='<strong style="color:var(--blue)">5/5 ✓</strong> Excelente base. ¿Querés una auditoría para confirmarlo? <a href="'+B+'contacto/">Contactanos →</a>';
+    else if(n<3)resultEl.innerHTML='<strong style="color:var(--blue)">'+n+'/5</strong> cubiertos. Hay puntos críticos que necesitan atención urgente. <a href="'+B+'contacto/index.html">Hablemos →</a>';
+    else if(n<5)resultEl.innerHTML='<strong style="color:var(--blue)">'+n+'/5</strong> cubiertos. Bien encaminado, pero los puntos faltantes pueden ser tu mayor vulnerabilidad. <a href="'+B+'contacto/index.html">Cerremos esas brechas →</a>';
+    else resultEl.innerHTML='<strong style="color:var(--blue)">5/5 ✓</strong> Excelente base. ¿Querés una auditoría para confirmarlo? <a href="'+B+'contacto/index.html">Contactanos →</a>';
   }
   items.forEach(item=>{
     function toggle(){item.classList.toggle('chk');item.setAttribute('aria-checked',item.classList.contains('chk'));refresh();}

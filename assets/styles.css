@@ -365,8 +365,8 @@ img{max-width:100%}
 }
 .pc:hover{transform:translateY(-4px);box-shadow:var(--sh3)}
 .pc-top{position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--r) var(--r) 0 0}
-.pc-logo{height:34px;margin-bottom:16px;display:flex;align-items:center}
-.pc-logo img{max-height:32px;max-width:100%;width:auto;object-fit:contain;display:block}
+.pc-logo{min-height:26px;margin-bottom:16px;display:flex;align-items:center}
+.pc-logo img{height:24px;width:auto;max-width:100%;object-fit:contain;display:block}
 .pc-logo .pc-wordmark{font-weight:800;font-size:1.45rem;letter-spacing:-.02em;line-height:1}
 .pc-logo .pc-wordmark small{display:block;font-size:.5rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--t3);margin-top:3px}
 .pc-cert{font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
