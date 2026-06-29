@@ -412,6 +412,9 @@ img{max-width:100%}
 /* when a real logo image is dropped in: <div class="cl"><img src="logos/clientes/xxx.png" alt="..."></div> */
 .cl img{max-height:40px;max-width:78%;width:auto;object-fit:contain;opacity:.65;filter:grayscale(1);transition:opacity .25s,filter .25s}
 .cl:hover img{opacity:1;filter:grayscale(0)}
+/* logos that ship only as white/on-dark art: render them as monochrome dark so they read on white */
+.cl.cl-dark img{filter:brightness(0);opacity:.5}
+.cl.cl-dark:hover img{filter:brightness(0);opacity:.82}
 
 /* ── TESTIMONIAL ────────────────────────── */
 .testi{background:#fff;border:1.5px solid var(--border);border-radius:var(--rlg);padding:48px 56px;box-shadow:var(--sh2);position:relative;overflow:hidden}
