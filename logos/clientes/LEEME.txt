@@ -1,0 +1,24 @@
+LOGOS DE CLIENTES
+=================
+
+Dejá acá los archivos de logo de cada cliente y avisame para conectarlos.
+
+Formato ideal:
+- PNG con fondo TRANSPARENTE, o SVG.
+- Que se vea bien sobre fondo blanco (logo oscuro/color).
+- No importa el tamaño exacto: la web los muestra a todos a la misma altura.
+
+Nombres de archivo sugeridos (uno por cliente):
+  als.png
+  conexion-salud.png
+  corplab.png
+  intergeo.png
+  mayer.png
+  wassertek.png
+  worklift.png
+  fdi-gerenciadora.png
+  stoncor.png
+
+Una vez que estén acá, en index.html cada cliente pasa de texto a:
+  <div class="cl"><img src="logos/clientes/als.png" alt="ALS"></div>
+(el estilo ya está listo: escala de grises uniforme + color al pasar el mouse).

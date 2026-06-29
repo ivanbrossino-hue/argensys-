@@ -400,14 +400,18 @@ img{max-width:100%}
 .lw-item .pc-wordmark{font-weight:800;font-size:1.25rem}
 
 /* ── CLIENTS GRID ───────────────────────── */
-.clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .cl{
   background:#fff;border:1.5px solid var(--border);border-radius:var(--r);
-  padding:18px 22px;font-size:.9rem;font-weight:600;color:var(--navy);
-  display:flex;align-items:center;gap:10px;transition:border-color .2s,box-shadow .2s,transform .2s;box-shadow:var(--sh);
+  min-height:90px;padding:18px 22px;
+  font-size:1.05rem;font-weight:800;letter-spacing:.01em;color:var(--t3);
+  display:flex;align-items:center;justify-content:center;text-align:center;gap:10px;
+  filter:grayscale(1);transition:all .25s var(--ease);box-shadow:var(--sh);
 }
-.cl::before{content:'';width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));flex-shrink:0}
-.cl:hover{border-color:var(--bord3);box-shadow:var(--sh2);transform:translateY(-2px)}
+.cl:hover{color:var(--navy);filter:grayscale(0);border-color:var(--bord3);box-shadow:var(--sh2);transform:translateY(-3px)}
+/* when a real logo image is dropped in: <div class="cl"><img src="logos/clientes/xxx.png" alt="..."></div> */
+.cl img{max-height:40px;max-width:78%;width:auto;object-fit:contain;opacity:.65;filter:grayscale(1);transition:opacity .25s,filter .25s}
+.cl:hover img{opacity:1;filter:grayscale(0)}
 
 /* ── TESTIMONIAL ────────────────────────── */
 .testi{background:#fff;border:1.5px solid var(--border);border-radius:var(--rlg);padding:48px 56px;box-shadow:var(--sh2);position:relative;overflow:hidden}
