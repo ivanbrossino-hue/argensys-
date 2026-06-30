@@ -42,20 +42,53 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $comments = $mensaje;
 if ($size !== '') { $comments .= ($comments ? "\n\n" : '') . "Tamaño de empresa: $size"; }
 
+// Separar Nombre y Apellido a partir del campo único del formulario ("Pablo Perez")
+$parts     = preg_split('/\s+/', $nombre, 2);
+$first_name = $parts[0] ?? $nombre;
+$last_name  = $parts[1] ?? '';
+
+$emailArr = $email    ? [['VALUE' => $email,    'VALUE_TYPE' => 'WORK']] : null;
+$phoneArr = $telefono ? [['VALUE' => $telefono, 'VALUE_TYPE' => 'WORK']] : null;
+
+// Helper para llamar al REST de Bitrix24
+function bitrix_call($webhook, $method, $fields) {
+  $url = rtrim($webhook, '/') . '/' . $method . '.json';
+  $ch = curl_init($url);
+  curl_setopt_array($ch, [
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST           => true,
+    CURLOPT_POSTFIELDS     => http_build_query(['fields' => $fields, 'params' => ['REGISTER_SONET_EVENT' => 'Y']]),
+    CURLOPT_TIMEOUT        => 20,
+  ]);
+  $resp = curl_exec($ch);
+  $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  curl_close($ch);
+  return [$code, json_decode($resp, true)];
+}
+
+// 1) Crear el Contacto (el "Cliente" del prospecto)
+$contactFields = ['NAME' => $first_name, 'LAST_NAME' => $last_name, 'OPENED' => 'Y', 'SOURCE_ID' => 'WEB'];
+if ($emailArr) $contactFields['EMAIL'] = $emailArr;
+if ($phoneArr) $contactFields['PHONE'] = $phoneArr;
+list($cCode, $cData) = bitrix_call($WEBHOOK, 'crm.contact.add', $contactFields);
+$contactId = ($cCode === 200 && isset($cData['result'])) ? (int) $cData['result'] : 0;
+
+// 2) Crear el Prospecto, vinculado al Contacto
 $fields = [
   'TITLE'         => 'Web: ' . ($empresa ?: $nombre),
-  'NAME'          => $nombre,          // dato de contacto del prospecto
+  'NAME'          => $first_name,
+  'LAST_NAME'     => $last_name,
   'COMPANY_TITLE' => $empresa,
   'SOURCE_ID'     => 'WEB',
   'COMMENTS'      => $comments,
   'OPENED'        => 'Y',
 ];
-if ($email)    $fields['EMAIL'] = [['VALUE' => $email, 'VALUE_TYPE' => 'WORK']];
-if ($telefono) $fields['PHONE'] = [['VALUE' => $telefono, 'VALUE_TYPE' => 'WORK']];
+if ($contactId) $fields['CONTACT_ID'] = $contactId;
+if ($emailArr)  $fields['EMAIL'] = $emailArr;
+if ($phoneArr)  $fields['PHONE'] = $phoneArr;
 
 // --- Área de Interés (campo personalizado tipo lista) ---
-// Bitrix guarda el ID numérico de la opción, NO el texto.
-// PENDIENTE: completar $AREA_FIELD con el código (UF_CRM_...) y $AREA_MAP con el ID de cada opción.
+// Bitrix guarda el ID numérico de la opción, no el texto; acá traducimos.
 $AREA_FIELD = 'UF_CRM_1782839712364';
 $AREA_MAP = [
   // valor del <select> de la web  =>  ID de la opción en Bitrix
@@ -70,26 +103,9 @@ if ($AREA_FIELD && $area !== '' && isset($AREA_MAP[$area])) {
   $fields[$AREA_FIELD] = $AREA_MAP[$area];
 }
 
-$url = rtrim($WEBHOOK, '/') . '/crm.lead.add.json';
-$payload = http_build_query([
-  'fields' => $fields,
-  'params' => ['REGISTER_SONET_EVENT' => 'Y'],
-]);
-
-$ch = curl_init($url);
-curl_setopt_array($ch, [
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_POST           => true,
-  CURLOPT_POSTFIELDS     => $payload,
-  CURLOPT_TIMEOUT        => 15,
-]);
-$resp = curl_exec($ch);
-$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
-
-$data = json_decode($resp, true);
+list($code, $data) = bitrix_call($WEBHOOK, 'crm.lead.add', $fields);
 if ($code === 200 && isset($data['result'])) {
-  echo json_encode(['ok' => true, 'id' => $data['result']]);
+  echo json_encode(['ok' => true, 'id' => $data['result'], 'contact' => $contactId]);
 } else {
   http_response_code(502);
   echo json_encode(['ok' => false, 'error' => 'bitrix', 'detail' => $data['error_description'] ?? '']);
