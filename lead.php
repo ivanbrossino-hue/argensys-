@@ -56,11 +56,15 @@ if ($telefono) $fields['PHONE'] = [['VALUE' => $telefono, 'VALUE_TYPE' => 'WORK'
 // --- Área de Interés (campo personalizado tipo lista) ---
 // Bitrix guarda el ID numérico de la opción, NO el texto.
 // PENDIENTE: completar $AREA_FIELD con el código (UF_CRM_...) y $AREA_MAP con el ID de cada opción.
-$AREA_FIELD = '';   // ej: 'UF_CRM_1700000000'
+$AREA_FIELD = 'UF_CRM_1782839712364';
 $AREA_MAP = [
   // valor del <select> de la web  =>  ID de la opción en Bitrix
-  // 'infraestructura' => 0, 'soporte' => 0, 'ciberseguridad' => 0,
-  // 'bitrix24' => 0, 'sentinel' => 0, 'otro' => 0,
+  'infraestructura' => 66,
+  'soporte'         => 67,
+  'ciberseguridad'  => 68,
+  'bitrix24'        => 69,
+  'sentinel'        => 70,
+  'otro'            => 71,
 ];
 if ($AREA_FIELD && $area !== '' && isset($AREA_MAP[$area])) {
   $fields[$AREA_FIELD] = $AREA_MAP[$area];
