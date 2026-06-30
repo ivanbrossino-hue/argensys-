@@ -66,14 +66,25 @@ function bitrix_call($webhook, $method, $fields) {
   return [$code, json_decode($resp, true)];
 }
 
-// 1) Crear el Contacto (el "Cliente" del prospecto)
+// 1) Crear la Compañía (si vino el nombre de empresa)
+$companyId = 0;
+if ($empresa !== '') {
+  $companyFields = ['TITLE' => $empresa, 'OPENED' => 'Y'];
+  if ($emailArr) $companyFields['EMAIL'] = $emailArr;
+  if ($phoneArr) $companyFields['PHONE'] = $phoneArr;
+  list($coCode, $coData) = bitrix_call($WEBHOOK, 'crm.company.add', $companyFields);
+  $companyId = ($coCode === 200 && isset($coData['result'])) ? (int) $coData['result'] : 0;
+}
+
+// 2) Crear el Contacto (el "Cliente" del prospecto), vinculado a la Compañía
 $contactFields = ['NAME' => $first_name, 'LAST_NAME' => $last_name, 'OPENED' => 'Y', 'SOURCE_ID' => 'WEB'];
-if ($emailArr) $contactFields['EMAIL'] = $emailArr;
-if ($phoneArr) $contactFields['PHONE'] = $phoneArr;
+if ($companyId) $contactFields['COMPANY_ID'] = $companyId;
+if ($emailArr)  $contactFields['EMAIL'] = $emailArr;
+if ($phoneArr)  $contactFields['PHONE'] = $phoneArr;
 list($cCode, $cData) = bitrix_call($WEBHOOK, 'crm.contact.add', $contactFields);
 $contactId = ($cCode === 200 && isset($cData['result'])) ? (int) $cData['result'] : 0;
 
-// 2) Crear el Prospecto, vinculado al Contacto
+// 3) Crear el Prospecto, vinculado al Contacto y a la Compañía
 $fields = [
   'TITLE'         => 'Web: ' . ($empresa ?: $nombre),
   'NAME'          => $first_name,
@@ -84,6 +95,7 @@ $fields = [
   'OPENED'        => 'Y',
 ];
 if ($contactId) $fields['CONTACT_ID'] = $contactId;
+if ($companyId) $fields['COMPANY_ID'] = $companyId;
 if ($emailArr)  $fields['EMAIL'] = $emailArr;
 if ($phoneArr)  $fields['PHONE'] = $phoneArr;
 
@@ -105,7 +117,7 @@ if ($AREA_FIELD && $area !== '' && isset($AREA_MAP[$area])) {
 
 list($code, $data) = bitrix_call($WEBHOOK, 'crm.lead.add', $fields);
 if ($code === 200 && isset($data['result'])) {
-  echo json_encode(['ok' => true, 'id' => $data['result'], 'contact' => $contactId]);
+  echo json_encode(['ok' => true, 'id' => $data['result'], 'contact' => $contactId, 'company' => $companyId]);
 } else {
   http_response_code(502);
   echo json_encode(['ok' => false, 'error' => 'bitrix', 'detail' => $data['error_description'] ?? '']);
