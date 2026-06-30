@@ -7,6 +7,48 @@
    Each page sets window.ARG_BASE = "" (home) or "../" (inner pages). */
 const B=window.ARG_BASE||'';
 
+/* ── ICON LIBRARY ───────────────────────── */
+/* Central line-icon set. Any element with data-icon="name" gets the SVG.
+   Shapes carry no stroke/fill attrs — CSS (.fcard-ico/.vico/.ct-ico svg) styles them. */
+const ICONS={
+  chat:'<path d="M21 11.5a7.5 7.5 0 0 1-10.8 6.7L4 20l1.8-5.2A7.5 7.5 0 1 1 21 11.5z"/>',
+  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/>',
+  pin:'<path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
+  alert:'<path d="M12 3 2 20h20L12 3z"/><line x1="12" y1="10" x2="12" y2="14"/><line x1="12" y1="17" x2="12" y2="17.01"/>',
+  crm:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M5 16.5a3.5 3.5 0 0 1 7 0"/><path d="M14.5 9.5h3.5M14.5 12.5h3.5M14.5 15.5h2"/>',
+  projects:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16"/>',
+  automation:'<circle cx="12" cy="12" r="3.2"/><path d="M12 2.6v2.6M12 18.8v2.6M2.6 12h2.6M18.8 12h2.6M5.2 5.2l1.8 1.8M17 17l1.8 1.8M18.8 5.2 17 7M7 17l-1.8 1.8"/>',
+  phone:'<path d="M5 4h3l1.6 4-2 1.4a11 11 0 0 0 5 5l1.4-2 4 1.6v3a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+  people:'<circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6"/><path d="M17.5 14.2A5.5 5.5 0 0 1 20.5 19"/>',
+  chart:'<path d="M3 20h18"/><rect x="5" y="11" width="3" height="7"/><rect x="10.5" y="6" width="3" height="12"/><rect x="16" y="13" width="3" height="5"/>',
+  firewall:'<rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9.3h18M3 14.6h18M9 4v5.3M15 9.3v5.3M9 14.6V20"/>',
+  endpoint:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+  radar:'<path d="M4.5 17a10 10 0 0 1 15 0"/><path d="M8 17a6 6 0 0 1 8 0"/><circle cx="12" cy="17" r="1.3"/>',
+  lock:'<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><line x1="12" y1="14.5" x2="12" y2="16.5"/>',
+  search:'<circle cx="11" cy="11" r="6"/><line x1="20" y1="20" x2="15.5" y2="15.5"/>',
+  user:'<circle cx="12" cy="8" r="3.5"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/>',
+  training:'<path d="M12 4 2 9l10 5 10-5-10-5z"/><path d="M6 11v4.5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V11"/>',
+  server:'<rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><line x1="7" y1="7" x2="7" y2="7"/><line x1="7" y1="17" x2="7" y2="17"/>',
+  network:'<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3.2 9h17.6M3.2 15h17.6"/>',
+  storage:'<ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.6 3.6 2.8 8 2.8s8-1.2 8-2.8v-13"/><path d="M4 12c0 1.6 3.6 2.8 8 2.8s8-1.2 8-2.8"/>',
+  cloud:'<path d="M7 18a4 4 0 0 1 0-8 5.5 5.5 0 0 1 10.5 1.5A3.5 3.5 0 0 1 17.5 18H7z"/>',
+  wrench:'<path d="M15 6.5a4 4 0 0 0-5.3 5.1l-6.1 6.1 2 2 6.1-6.1A4 4 0 0 0 17 8.3l-2.4 2.4-1.9-1.9L15 6.5z"/>',
+  shield:'<path d="M12 3l7 2.5v5.5c0 4.3-3 7.7-7 9.5-4-1.8-7-5.2-7-9.5V5.5L12 3z"/>',
+  chip:'<rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5" rx="0.5"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/>',
+  laptop:'<rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20l-1.5-2.5H3.5L2 19z"/>',
+  refresh:'<path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/>',
+  heart:'<path d="M12 20s-7-4.7-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.3-7 10-7 10z"/>',
+  target:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.9"/>',
+  growth:'<path d="M3 17l5.5-5.5 4 4L21 7"/><path d="M15 7h6v6"/>',
+  bolt:'<path d="M13 3 5 13h5l-1 8 8-10h-5l1-8z"/>',
+  puzzle:'<path d="M9 4.5a2 2 0 0 1 4 0c0 1 .6 1.5 1.5 1.5H17v3c0 .9.5 1.5 1.5 1.5a2 2 0 0 1 0 4c-1 0-1.5.6-1.5 1.5V20h-3c-.9 0-1.5-.6-1.5-1.5a2 2 0 0 0-4 0c0 .9-.6 1.5-1.5 1.5H4v-3.5c0-.9-.6-1.5-1.5-1.5a2 2 0 0 1 0-4c.9 0 1.5-.6 1.5-1.5V6h3.5C8.4 6 9 5.4 9 4.5z"/>'
+};
+document.querySelectorAll('[data-icon]').forEach(el=>{
+  const n=el.getAttribute('data-icon');
+  if(ICONS[n])el.innerHTML='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">'+ICONS[n]+'</svg>';
+});
+
 /* ── NAV scroll state ───────────────────── */
 const nav=document.getElementById('nav');
 if(nav){

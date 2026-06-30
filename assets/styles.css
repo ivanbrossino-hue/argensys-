@@ -323,6 +323,7 @@ img{max-width:100%}
 .vcard{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:24px 22px;transition:transform .25s,box-shadow .25s}
 .vcard:hover{transform:translateY(-3px);box-shadow:var(--sh)}
 .vcard .vico{font-size:1.3rem;margin-bottom:10px}
+.vico svg{width:27px;height:27px;fill:none;stroke:var(--blue);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .vcard h4{font-size:.98rem;font-weight:700;color:var(--navy);margin-bottom:6px}
 .vcard p{font-size:.86rem;color:var(--t2);line-height:1.55}
 .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -475,6 +476,7 @@ img{max-width:100%}
 .ct{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);transition:border-color .2s,transform .2s;color:var(--navy)}
 .ct:hover{border-color:var(--bord2);transform:translateX(4px)}
 .ct-ico{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;color:#fff}
+.ct-ico svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .ct-l{font-size:.7rem;color:var(--t3);font-weight:600}
 .ct-v{font-weight:700;color:var(--navy);font-size:.9rem}
 /* dark variant for CTA sections */
