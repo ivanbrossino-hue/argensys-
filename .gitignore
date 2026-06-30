@@ -3,3 +3,6 @@ bitrix-config.php
 
 # Local / herramientas
 .claude/
+
+# Artefacto de deploy (se genera para subir al hosting; no versionar)
+*.zip
