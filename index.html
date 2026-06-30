@@ -303,7 +303,8 @@
       </div>
       <div class="form-card on-dark rv-r d2">
         <h3 class="form-title">Solicitá tu diagnóstico</h3>
-        <form data-lead>
+        <form data-lead method="post" action="lead.php">
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"/>
           <div class="fr">
             <div class="fg"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" placeholder="Juan García" required autocomplete="given-name"/></div>
             <div class="fg"><label for="empresa">Empresa *</label><input type="text" id="empresa" name="empresa" placeholder="Mi Empresa S.A." required autocomplete="organization"/></div>

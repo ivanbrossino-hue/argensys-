@@ -137,9 +137,18 @@ document.querySelectorAll('form[data-lead]').forEach(form=>{
     e.preventDefault();
     const b=this.querySelector('.fsub');
     if(!b)return;
-    const orig=b.textContent;
-    b.textContent='Enviando…';b.disabled=true;
-    setTimeout(()=>{b.textContent='✓ ¡Listo! Te contactamos en las próximas horas.';b.style.background='#059669';},900);
+    const orig=b.textContent, action=this.getAttribute('action')||'';
+    b.textContent='Enviando…';b.disabled=true;b.style.background='';
+    fetch(action,{method:'POST',body:new FormData(this)})
+      .then(r=>r.ok?r.json():Promise.reject(r))
+      .then(d=>{
+        if(d&&d.ok){b.textContent='✓ ¡Listo! Te contactamos en las próximas horas.';b.style.background='#059669';form.reset();}
+        else throw new Error('bad');
+      })
+      .catch(()=>{
+        b.textContent='No se pudo enviar — escribinos por WhatsApp →';b.style.background='#C0392B';b.disabled=false;
+        setTimeout(()=>{b.textContent=orig;b.style.background='';},5000);
+      });
   });
 });
 

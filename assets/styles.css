@@ -470,6 +470,7 @@ img{max-width:100%}
 .fg select{cursor:pointer}
 .fg textarea{resize:vertical;min-height:110px}
 .fr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}
 .fsub{
   width:100%;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border:none;
   padding:14px;border-radius:9px;font-weight:800;font-size:.9rem;cursor:pointer;

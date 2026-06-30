@@ -1,0 +1,5 @@
+# Secreto: la URL del webhook de Bitrix24 vive solo en el servidor, nunca en el repo
+bitrix-config.php
+
+# Local / herramientas
+.claude/
