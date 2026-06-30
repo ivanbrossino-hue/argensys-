@@ -416,6 +416,13 @@ img{max-width:100%}
 /* logos that ship only as white/on-dark art: render them as monochrome dark so they read on white */
 .cl.cl-dark img{filter:brightness(0);opacity:.5}
 .cl.cl-dark:hover img{filter:brightness(0);opacity:.82}
+/* monochrome logos recolored via mask: grey at rest, brand color (--brand) on hover.
+   mask-image is set inline on the element (resolves relative to the page, not this file). */
+.cl-mono{display:block;width:100%;height:38px;background:#9aa3b8;transition:background .25s var(--ease);
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-position:center;mask-position:center;
+  -webkit-mask-size:contain;mask-size:contain}
+.cl:hover .cl-mono{background:var(--brand,var(--blue))}
 
 /* ── TESTIMONIAL ────────────────────────── */
 .testi{background:#fff;border:1.5px solid var(--border);border-radius:var(--rlg);padding:48px 56px;box-shadow:var(--sh2);position:relative;overflow:hidden}
