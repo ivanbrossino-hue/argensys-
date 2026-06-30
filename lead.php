@@ -26,9 +26,10 @@ function field($k) { return isset($_POST[$k]) ? trim((string) $_POST[$k]) : ''; 
 $nombre   = field('nombre');
 $empresa  = field('empresa');
 $email    = field('email');
-$telefono = field('tel') ?: field('telefono');     // home / contacto
-$extra    = field('size') ?: field('area');        // tamaño de empresa / área de interés
-$mensaje  = field('msg') ?: field('mensaje');
+$telefono = field('tel') ?: field('telefono');   // home / contacto
+$area     = field('area');                        // contacto: Área de interés (desplegable)
+$size     = field('size');                        // home: Tamaño de empresa (sin campo propio en Bitrix)
+$mensaje  = field('msg') ?: field('mensaje');     // "Contanos qué necesitás"
 
 if ($nombre === '' || $email === '') {
   http_response_code(422); echo json_encode(['ok' => false, 'error' => 'campos']); exit;
@@ -37,14 +38,13 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   http_response_code(422); echo json_encode(['ok' => false, 'error' => 'email']); exit;
 }
 
-$comments = '';
-if ($empresa) $comments .= "Empresa: $empresa\n";
-if ($extra)   $comments .= "Detalle: $extra\n";
-if ($mensaje) $comments .= "Mensaje: $mensaje\n";
+// Comentario = solo lo que el usuario escribió. (El "Tamaño" del home no tiene campo propio: se anexa acá.)
+$comments = $mensaje;
+if ($size !== '') { $comments .= ($comments ? "\n\n" : '') . "Tamaño de empresa: $size"; }
 
 $fields = [
   'TITLE'         => 'Web: ' . ($empresa ?: $nombre),
-  'NAME'          => $nombre,
+  'NAME'          => $nombre,          // dato de contacto del prospecto
   'COMPANY_TITLE' => $empresa,
   'SOURCE_ID'     => 'WEB',
   'COMMENTS'      => $comments,
@@ -52,6 +52,19 @@ $fields = [
 ];
 if ($email)    $fields['EMAIL'] = [['VALUE' => $email, 'VALUE_TYPE' => 'WORK']];
 if ($telefono) $fields['PHONE'] = [['VALUE' => $telefono, 'VALUE_TYPE' => 'WORK']];
+
+// --- Área de Interés (campo personalizado tipo lista) ---
+// Bitrix guarda el ID numérico de la opción, NO el texto.
+// PENDIENTE: completar $AREA_FIELD con el código (UF_CRM_...) y $AREA_MAP con el ID de cada opción.
+$AREA_FIELD = '';   // ej: 'UF_CRM_1700000000'
+$AREA_MAP = [
+  // valor del <select> de la web  =>  ID de la opción en Bitrix
+  // 'infraestructura' => 0, 'soporte' => 0, 'ciberseguridad' => 0,
+  // 'bitrix24' => 0, 'sentinel' => 0, 'otro' => 0,
+];
+if ($AREA_FIELD && $area !== '' && isset($AREA_MAP[$area])) {
+  $fields[$AREA_FIELD] = $AREA_MAP[$area];
+}
 
 $url = rtrim($WEBHOOK, '/') . '/crm.lead.add.json';
 $payload = http_build_query([
