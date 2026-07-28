@@ -59,6 +59,11 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 if (preg_match('~https?://|www\.~i', $nombre . ' ' . $empresa)) {
   http_response_code(422); echo json_encode(['ok' => false, 'error' => 'spam']); exit;
 }
+// Heurística anti-bot: rechazar alfabetos no latinos (griego, cirílico, árabe, hebreo, CJK…).
+// Un cliente argentino escribe en español (alfabeto latino); este spam viene en otros alfabetos.
+if (preg_match('/[\x{0370}-\x{03FF}\x{0400}-\x{04FF}\x{0530}-\x{05FF}\x{0590}-\x{05FF}\x{0600}-\x{06FF}\x{4E00}-\x{9FFF}\x{3040}-\x{30FF}\x{AC00}-\x{D7AF}]/u', $nombre . ' ' . $empresa . ' ' . $mensaje)) {
+  http_response_code(422); echo json_encode(['ok' => false, 'error' => 'spam']); exit;
+}
 
 // Comentario = solo lo que el usuario escribió. (El "Tamaño" del home no tiene campo propio: se anexa acá.)
 $comments = $mensaje;
