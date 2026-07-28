@@ -21,6 +21,24 @@ if (!$WEBHOOK) {
   http_response_code(500); echo json_encode(['ok' => false, 'error' => 'config']); exit;
 }
 
+// Anti-bot: verificación de Cloudflare Turnstile (si hay secret configurado)
+$TURNSTILE_SECRET = (is_array($cfg) && !empty($cfg['turnstile_secret'])) ? $cfg['turnstile_secret'] : '';
+if ($TURNSTILE_SECRET) {
+  $token = isset($_POST['cf-turnstile-response']) ? $_POST['cf-turnstile-response'] : '';
+  if (!$token) { http_response_code(422); echo json_encode(['ok' => false, 'error' => 'captcha']); exit; }
+  $ch = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
+  curl_setopt_array($ch, [
+    CURLOPT_RETURNTRANSFER => true, CURLOPT_POST => true, CURLOPT_TIMEOUT => 15,
+    CURLOPT_POSTFIELDS => http_build_query([
+      'secret'   => $TURNSTILE_SECRET,
+      'response' => $token,
+      'remoteip' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '',
+    ]),
+  ]);
+  $ts = json_decode(curl_exec($ch), true); curl_close($ch);
+  if (empty($ts['success'])) { http_response_code(403); echo json_encode(['ok' => false, 'error' => 'captcha']); exit; }
+}
+
 function field($k) { return isset($_POST[$k]) ? trim((string) $_POST[$k]) : ''; }
 
 $nombre   = field('nombre');
@@ -36,6 +54,10 @@ if ($nombre === '' || $email === '') {
 }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   http_response_code(422); echo json_encode(['ok' => false, 'error' => 'email']); exit;
+}
+// Heurística anti-bot: el nombre y la empresa nunca llevan links (los bots meten URLs)
+if (preg_match('~https?://|www\.~i', $nombre . ' ' . $empresa)) {
+  http_response_code(422); echo json_encode(['ok' => false, 'error' => 'spam']); exit;
 }
 
 // Comentario = solo lo que el usuario escribió. (El "Tamaño" del home no tiene campo propio: se anexa acá.)

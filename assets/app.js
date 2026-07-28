@@ -132,12 +132,25 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 });
 
 /* ── CONTACT / LEAD FORMS ───────────────── */
+// cargar el script de Cloudflare Turnstile si hay algún widget en la página
+if(document.querySelector('.cf-turnstile')){
+  var _ts=document.createElement('script');
+  _ts.src='https://challenges.cloudflare.com/turnstile/v0/api.js';
+  _ts.async=true;_ts.defer=true;
+  document.head.appendChild(_ts);
+}
 document.querySelectorAll('form[data-lead]').forEach(form=>{
   form.addEventListener('submit',function(e){
     e.preventDefault();
     const b=this.querySelector('.fsub');
     if(!b)return;
     const orig=b.textContent, action=this.getAttribute('action')||'';
+    // si hay captcha y todavía no se resolvió, no enviar
+    const cf=this.querySelector('.cf-turnstile');
+    if(cf){
+      const tok=this.querySelector('[name="cf-turnstile-response"]');
+      if(!tok||!tok.value){b.textContent='Verificá que no sos un robot';setTimeout(()=>{b.textContent=orig;},3000);return;}
+    }
     b.textContent='Enviando…';b.disabled=true;b.style.background='';
     fetch(action,{method:'POST',body:new FormData(this)})
       .then(r=>r.ok?r.json():Promise.reject(r))
