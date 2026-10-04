@@ -414,6 +414,8 @@
     if (!cart.length) return;
     renderCheckoutSummary();
     $("#formError").hidden = true;
+    $("#checkoutForm").hidden = false;
+    $("#checkoutDone").hidden = true;
     openModal("#checkoutModal");
   }
 
@@ -486,13 +488,23 @@
       d.comentarios ? "*Comentarios:* " + d.comentarios : null
     ].filter(function (x) { return x !== null; }).join("\n");
 
-    window.open(waLink(msg), "_blank", "noopener");
+    // Paso de confirmación con un enlace real (los pop-ups abiertos por script suelen bloquearse)
+    $("#coMessage").textContent = msg;
+    $("#coSend").href = waLink(msg);
+    f.hidden = true;
+    $("#checkoutDone").hidden = false;
+    $("#coSend").focus();
+  }
+
+  function finishOrder() {
     cart = [];
     saveCart();
     renderCart();
-    f.reset();
-    closeAll();
-    toast("¡Pedido generado! Confirmalo en WhatsApp y te respondemos a la brevedad.");
+    $("#checkoutForm").reset();
+    setTimeout(function () {
+      closeAll();
+      toast("¡Pedido enviado! Te respondemos a la brevedad por WhatsApp.");
+    }, 300);
   }
 
   /* ---------- Toast ---------- */
@@ -647,6 +659,8 @@
     $("#checkoutBtn").onclick = openCheckout;
     $("#checkoutForm").addEventListener("change", renderCheckoutSummary);
     $("#checkoutForm").addEventListener("submit", submitCheckout);
+    $("#coSend").addEventListener("click", finishOrder);
+    $("#coBack").onclick = function () { $("#checkoutDone").hidden = true; $("#checkoutForm").hidden = false; };
     $("#gremioToggle").onchange = function () {
       setGremio(this.checked);
       toast(this.checked ? "Precios gremio activados" : "Mostrando precios al público");
