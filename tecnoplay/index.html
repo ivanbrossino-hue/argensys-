@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TecnoPlay | Repuestos para Celulares</title>
+  <meta name="description" content="TecnoPlay: módulos, baterías, pines de carga, flex, tapas y herramientas para reparación de celulares. Envíos a todo el país y precios para técnicos."/>
+  <meta name="theme-color" content="#0B3D91"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B3D91'/%3E%3Cpath d='M24 18l24 14-24 14z' fill='%23FFC928'/%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- Barra superior -->
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <div class="topbar-msg" id="topbarMsg">🚚 Envíos a todo el país · 📦 Despacho en 24 hs hábiles</div>
+    <div class="topbar-links">
+      <a href="#como-comprar">Cómo comprar</a>
+      <a href="#faq">Preguntas frecuentes</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+
+    <a href="#" class="logo" aria-label="TecnoPlay inicio">
+      <span class="logo-mark">
+        <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="currentColor"/><path d="M15 11l15 9-15 9z" fill="#FFC928"/></svg>
+      </span>
+      <span class="logo-text">Tecno<b>Play</b></span>
+    </a>
+
+    <form class="search" id="searchForm" role="search">
+      <input type="search" id="searchInput" placeholder="Buscá por modelo, repuesto o código… ej: módulo A32" autocomplete="off"/>
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+      <div class="search-suggest" id="searchSuggest"></div>
+    </form>
+
+    <div class="header-actions">
+      <label class="gremio-toggle" title="Ver precios para técnicos / gremio">
+        <input type="checkbox" id="gremioToggle"/>
+        <span class="gt-track"><span class="gt-thumb"></span></span>
+        <span class="gt-label">Precio<br/>gremio</span>
+      </label>
+      <button class="cart-btn" id="cartBtn" aria-label="Ver carrito">
+        <svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+        <span class="cart-total" id="cartTotalHeader">$0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Navegación de categorías -->
+  <nav class="catnav" id="catnav">
+    <div class="wrap catnav-in" id="catnavList"></div>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero / slider -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="slider" id="slider">
+        <div class="slides" id="slides">
+          <article class="slide slide-1">
+            <div class="slide-copy">
+              <span class="pill pill-yellow">Nuevo ingreso</span>
+              <h1>Módulos originales y OLED para <span>Samsung</span></h1>
+              <p>Línea A y S con marco. Calidad probada, garantía de 30 días y envío en el día.</p>
+              <div class="slide-ctas">
+                <a href="#catalogo" class="btn btn-yellow" data-goto-cat="modulos">Ver módulos</a>
+                <a href="#como-comprar" class="btn btn-ghost-light">Cómo comprar</a>
+              </div>
+            </div>
+            <div class="slide-art" data-art="modulos"></div>
+          </article>
+          <article class="slide slide-2">
+            <div class="slide-copy">
+              <span class="pill pill-blue">Técnicos</span>
+              <h1>Precios <span>gremio</span> para servicios técnicos</h1>
+              <p>Activá el modo gremio y mirá los precios mayoristas. Descuento extra por transferencia.</p>
+              <div class="slide-ctas">
+                <button class="btn btn-blue" id="heroGremio">Activar precio gremio</button>
+              </div>
+            </div>
+            <div class="slide-art" data-art="herramientas"></div>
+          </article>
+          <article class="slide slide-3">
+            <div class="slide-copy">
+              <span class="pill pill-yellow">Hasta 15% OFF</span>
+              <h1>Baterías con <span>alta capacidad</span></h1>
+              <p>Para Samsung, Motorola, Xiaomi y iPhone. Ciclos certificados.</p>
+              <div class="slide-ctas">
+                <a href="#catalogo" class="btn btn-yellow" data-goto-cat="baterias">Ver baterías</a>
+              </div>
+            </div>
+            <div class="slide-art" data-art="baterias"></div>
+          </article>
+        </div>
+        <button class="slider-arrow prev" id="slidePrev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="slider-arrow next" id="slideNext" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="benefits">
+    <div class="wrap benefits-in">
+      <div class="benefit"><span class="b-ico">🚚</span><div><b>Envíos a todo el país</b><small>Correo, OCA, Andreani y moto en CABA</small></div></div>
+      <div class="benefit"><span class="b-ico">💳</span><div><b>Hasta 3 cuotas sin interés</b><small>Con tarjetas de crédito</small></div></div>
+      <div class="benefit"><span class="b-ico">🏦</span><div><b>10% OFF por transferencia</b><small>Se aplica al finalizar la compra</small></div></div>
+      <div class="benefit"><span class="b-ico">🛡️</span><div><b>Garantía de 30 días</b><small>En todos los repuestos</small></div></div>
+    </div>
+  </section>
+
+  <!-- Categorías -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Comprá por <span>categoría</span></h2>
+      </div>
+      <div class="cat-grid" id="catGrid"></div>
+    </div>
+  </section>
+
+  <!-- Marcas -->
+  <section class="section section-tint">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Buscá por <span>marca</span></h2>
+      </div>
+      <div class="brand-row" id="brandRow"></div>
+    </div>
+  </section>
+
+  <!-- Catálogo -->
+  <section class="section" id="catalogo">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="catalogTitle">Todos los <span>productos</span></h2>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+
+      <div class="shop">
+        <aside class="filters" id="filters">
+          <div class="filters-head">
+            <b>Filtrar</b>
+            <button class="link-btn" id="clearFilters">Limpiar</button>
+            <button class="icon-btn filters-close" id="filtersClose" aria-label="Cerrar filtros"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+          </div>
+          <div class="filter-block">
+            <h4>Categoría</h4>
+            <div id="filterCats"></div>
+          </div>
+          <div class="filter-block">
+            <h4>Marca</h4>
+            <div id="filterBrands"></div>
+          </div>
+          <div class="filter-block">
+            <h4>Calidad</h4>
+            <div id="filterQuality"></div>
+          </div>
+          <div class="filter-block">
+            <label class="check"><input type="checkbox" id="filterStock"/> <span>Solo con stock</span></label>
+            <label class="check"><input type="checkbox" id="filterOffer"/> <span>Solo ofertas</span></label>
+          </div>
+        </aside>
+
+        <div class="shop-main">
+          <div class="toolbar">
+            <button class="btn btn-outline filters-open" id="filtersOpen">
+              <svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></svg> Filtros
+            </button>
+            <div class="chips" id="activeChips"></div>
+            <select id="sortSelect" aria-label="Ordenar">
+              <option value="relevance">Más relevantes</option>
+              <option value="price-asc">Menor precio</option>
+              <option value="price-desc">Mayor precio</option>
+              <option value="name">Nombre A-Z</option>
+            </select>
+          </div>
+          <div class="grid" id="productGrid"></div>
+          <div class="empty" id="emptyState" hidden>
+            <div class="empty-ico">🔍</div>
+            <h3>No encontramos productos</h3>
+            <p>Probá con otro modelo o limpiá los filtros. Si no lo ves, consultanos por WhatsApp: lo conseguimos.</p>
+            <button class="btn btn-blue" id="emptyClear">Limpiar filtros</button>
+          </div>
+          <div class="load-more-wrap"><button class="btn btn-outline" id="loadMore" hidden>Ver más productos</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo comprar -->
+  <section class="section section-blue" id="como-comprar">
+    <div class="wrap">
+      <div class="section-head light">
+        <h2>¿Cómo <span>comprar</span>?</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="step-n">1</span><h3>Elegí tus repuestos</h3><p>Buscá por modelo o navegá las categorías y agregalos al carrito.</p></div>
+        <div class="step"><span class="step-n">2</span><h3>Completá tus datos</h3><p>Elegí envío o retiro en local y el medio de pago que prefieras.</p></div>
+        <div class="step"><span class="step-n">3</span><h3>Confirmá por WhatsApp</h3><p>Te llega el pedido armado, confirmamos stock y te pasamos los datos de pago.</p></div>
+        <div class="step"><span class="step-n">4</span><h3>Recibí tu pedido</h3><p>Despachamos en 24 hs hábiles con número de seguimiento.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap narrow">
+      <div class="section-head">
+        <h2>Preguntas <span>frecuentes</span></h2>
+      </div>
+      <div class="faq">
+        <details><summary>¿Qué diferencia hay entre calidad Original, OLED e Incell?</summary><p>Los <b>Originales</b> son el repuesto de fábrica (service pack). Los <b>OLED</b> replican la tecnología del original con muy buena calidad de imagen. Los <b>Incell</b> son una alternativa económica con buena respuesta táctil y brillo algo menor.</p></details>
+        <details><summary>¿Cómo accedo al precio gremio?</summary><p>Activá el interruptor “Precio gremio” arriba a la derecha. Para compras mayoristas recurrentes, escribinos y te damos de alta como cliente técnico.</p></details>
+        <details><summary>¿Tienen garantía los repuestos?</summary><p>Sí, 30 días contra defectos de fábrica. El repuesto debe volver sin golpes, sin marcas de soldadura y con su film protector.</p></details>
+        <details><summary>¿Hacen envíos al interior?</summary><p>Sí, enviamos a todo el país por Correo Argentino, OCA y Andreani. En CABA y GBA también tenemos moto mensajería en el día.</p></details>
+        <details><summary>¿Puedo retirar en el local?</summary><p>Sí. Elegí “Retiro en local” al confirmar el pedido y te avisamos cuando esté listo.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer" id="contacto">
+  <div class="wrap footer-in">
+    <div class="f-col f-brand">
+      <a href="#" class="logo logo-light">
+        <span class="logo-mark"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="currentColor"/><path d="M15 11l15 9-15 9z" fill="#FFC928"/></svg></span>
+        <span class="logo-text">Tecno<b>Play</b></span>
+      </a>
+      <p>Repuestos y accesorios para reparación de celulares. Atención a particulares y servicios técnicos.</p>
+    </div>
+    <div class="f-col">
+      <h4>Categorías</h4>
+      <ul id="footerCats"></ul>
+    </div>
+    <div class="f-col">
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="#como-comprar">Cómo comprar</a></li>
+        <li><a href="#faq">Envíos y garantía</a></li>
+        <li><a href="#faq">Precio gremio</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Contacto</h4>
+      <ul class="f-contact">
+        <li>📍 <span id="cfgAddress"></span></li>
+        <li>🕘 <span id="cfgHours"></span></li>
+        <li>✉️ <a id="cfgEmail" href="#"></a></li>
+        <li>💬 <a id="cfgWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap">© <span id="year"></span> TecnoPlay · Todos los derechos reservados · Precios en pesos argentinos, sujetos a cambios sin previo aviso.</div>
+  </div>
+</footer>
+
+<!-- Botón flotante WhatsApp -->
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.3 19.4L3 29l6.8-1.8A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-4 1 1.1-3.9-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8a3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Carrito -->
+<aside class="drawer" id="cartDrawer" aria-label="Carrito">
+  <div class="drawer-head">
+    <h3>Tu carrito</h3>
+    <button class="icon-btn" id="cartClose" aria-label="Cerrar carrito"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="ship-bar" id="shipBar"></div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot" id="cartFoot">
+    <div class="sum-row"><span>Subtotal</span><b id="cartSubtotal">$0</b></div>
+    <div class="sum-row muted"><span>Con transferencia (10% OFF)</span><b id="cartTransfer">$0</b></div>
+    <button class="btn btn-yellow btn-block" id="checkoutBtn">Finalizar compra</button>
+    <button class="link-btn center" id="keepShopping">Seguir comprando</button>
+  </div>
+</aside>
+
+<!-- Modal producto -->
+<div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+  <div class="modal-box modal-product">
+    <button class="icon-btn modal-close" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div id="productModalBody"></div>
+  </div>
+</div>
+
+<!-- Modal checkout -->
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="coTitle">
+  <div class="modal-box modal-checkout">
+    <button class="icon-btn modal-close" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h3 id="coTitle">Finalizar compra</h3>
+    <form id="checkoutForm" novalidate>
+      <div class="form-grid">
+        <label>Nombre y apellido<input name="nombre" required autocomplete="name"/></label>
+        <label>Teléfono / WhatsApp<input name="telefono" required type="tel" autocomplete="tel"/></label>
+        <label class="span-2">Email<input name="email" type="email" autocomplete="email"/></label>
+      </div>
+      <fieldset>
+        <legend>Entrega</legend>
+        <label class="radio"><input type="radio" name="entrega" value="Envío a domicilio" checked/> <span>Envío a domicilio</span></label>
+        <label class="radio"><input type="radio" name="entrega" value="Retiro en local"/> <span>Retiro en local</span></label>
+      </fieldset>
+      <div class="form-grid" id="shipFields">
+        <label class="span-2">Dirección<input name="direccion" autocomplete="street-address"/></label>
+        <label>Localidad<input name="localidad" autocomplete="address-level2"/></label>
+        <label>Código postal<input name="cp" autocomplete="postal-code"/></label>
+      </div>
+      <fieldset>
+        <legend>Pago</legend>
+        <label class="radio"><input type="radio" name="pago" value="Transferencia" checked/> <span>Transferencia bancaria <em>10% OFF</em></span></label>
+        <label class="radio"><input type="radio" name="pago" value="Mercado Pago"/> <span>Mercado Pago</span></label>
+        <label class="radio"><input type="radio" name="pago" value="Tarjeta de crédito"/> <span>Tarjeta de crédito (hasta 3 cuotas)</span></label>
+        <label class="radio"><input type="radio" name="pago" value="Efectivo"/> <span>Efectivo en local</span></label>
+      </fieldset>
+      <label>Comentarios<textarea name="comentarios" rows="2" placeholder="Ej: necesito factura A, horario de entrega…"></textarea></label>
+      <div class="co-summary" id="coSummary"></div>
+      <p class="form-error" id="formError" hidden></p>
+      <button type="submit" class="btn btn-wa btn-block">
+        <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.3 19.4L3 29l6.8-1.8A13 13 0 1 0 16 3zm5.8 15.7c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8a3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+        Enviar pedido por WhatsApp
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
